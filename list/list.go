@@ -1,7 +1,26 @@
+/*
+Purpose:
+	implement my version of simple linked list.
+
+Version: 1.0
+
+Methods:
+	- len [x] : get length of list
+	- append [x] : add element to end of list
+	- display [] : display element in list
+	- popend [] : remove  last element of list
+	- appstart [] : add element to first in list
+	- popstart [] : remove element to first in list
+	- insert [] : add element into list based in position
+	- pop [] : remove element in list based in position
+*/
+
 package main
 
 import "fmt"
 
+//////////////////////
+////// data structures
 
 type myNode struct {
 	value string
@@ -13,15 +32,19 @@ type myLinkedList struct {
 	head *myNode
 }
 
+//////////////////////
+////// methods
+
+/// get lenght of list
 func (l *myLinkedList) len() int {
 	return l.length
 }
 
+/// insert element to end of list
 func (L *myLinkedList) append(data string) {
 	newMyNode := &myNode{value: data, next: nil }
 
 	if L.head == nil {
-		fmt.Println("first time")
 		L.head = newMyNode
 	}else{
 		currentPointer := L.head
