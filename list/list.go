@@ -7,7 +7,7 @@ Version: 1.0
 Methods:
 	- len [x] : get length of list
 	- append [x] : add element to end of list
-	- display [] : display element in list
+	- display [x] : display element in list
 	- popend [] : remove  last element of list
 	- appstart [] : add element to first in list
 	- popstart [] : remove element to first in list
@@ -56,12 +56,24 @@ func (L *myLinkedList) append(data string) {
 	L.length++;
 }
 
+func (L *myLinkedList) display (){
+	currentNode := L.head
+	index := 1
+	var msg string
+	for currentNode != nil {
+		msg = fmt.Sprintf("position %d : %s", index, currentNode.value)
+		fmt.Println(msg)
+		currentNode = currentNode.next
+		index++
+	}	
+}
+
 
 func main(){
 	testingList := myLinkedList{length: 0}
 	testingList.append("hola")
 	testingList.append("que")
 	testingList.append("tal?")
-	fmt.Println(testingList.len())
-	fmt.Println(testingList.head)
+	fmt.Println()
+	testingList.display()
 }
