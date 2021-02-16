@@ -25,13 +25,13 @@ Contain current methods implemented in those lists.
 
 | Methods | SSL | DSL | CSL | CDL |
 | ---- | ---- | ---- | ---- | ---- |
-| popend | | | | |
-| popstart| | | | |
-| appstart | | | | |
-| append|  X  | | | |
-| display |  X  | | | |
-| len|  X  | | | |
-| insert | | | | |
-| pop| | | | |
+| popend | :white_check_mark: | | | |
+| popstart| :white_check_mark: | | | |
+| appstart | :white_check_mark: | | | |
+| append| :heavy_check_mark: | | | |
+| display | :heavy_check_mark: | | | |
+| len| :heavy_check_mark: | | | |
+| insert | :white_check_mark: | | | |
+| pop| :white_check_mark: |  | | |
 
 ## version: 0.1.0
