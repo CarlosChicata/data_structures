@@ -56,6 +56,7 @@ func (L *myLinkedList) append(data string) {
 	L.length++;
 }
 
+/// display all elements in list
 func (L *myLinkedList) display (){
 	currentNode := L.head
 	index := 1
@@ -68,12 +69,25 @@ func (L *myLinkedList) display (){
 	}	
 }
 
+/// add first of list
+func (L *myLinkedList) appstart (data string){
+	newNode := &myNode{ value: data, next: nil }
+	if L.head == nil {
+		L.head = newNode
+	}else{
+		newNode.next = L.head
+		L.head = newNode
+	}
+}
+
 
 func main(){
 	testingList := myLinkedList{length: 0}
 	testingList.append("hola")
 	testingList.append("que")
 	testingList.append("tal?")
-	fmt.Println()
+	fmt.Println("----------")
+	testingList.display()
+	testingList.appstart("¿")
 	testingList.display()
 }
