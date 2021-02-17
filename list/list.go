@@ -9,8 +9,8 @@ Methods:
 	- append [x] : add element to end of list
 	- display [x] : display element in list
 	- popend [] : remove  last element of list
-	- appstart [] : add element to first in list
-	- popstart [] : remove element to first in list
+	- appstart [x] : add element to first in list
+	- popstart [x] : remove element to first in list
 	- insert [] : add element into list based in position
 	- pop [] : remove element in list based in position
 */
@@ -66,7 +66,8 @@ func (L *myLinkedList) display (){
 		fmt.Println(msg)
 		currentNode = currentNode.next
 		index++
-	}	
+	}
+	fmt.Println("-----end----")
 }
 
 /// add first of list
@@ -80,14 +81,25 @@ func (L *myLinkedList) appstart (data string){
 	}
 }
 
+/// pop first in list
+func (L* myLinkedList) popstart () *myNode{
+	var headNode *myNode
+	headNode = nil
+	if L.head != nil {
+		headNode = L.head
+		L.head = L.head.next
+	}
+	return headNode
+}
 
 func main(){
 	testingList := myLinkedList{length: 0}
 	testingList.append("hola")
 	testingList.append("que")
 	testingList.append("tal?")
-	fmt.Println("----------")
 	testingList.display()
 	testingList.appstart("¿")
+	testingList.display()
+	fmt.Println(testingList.popstart())
 	testingList.display()
 }
