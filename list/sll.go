@@ -11,7 +11,7 @@ Methods:
 	- popend [x] : remove  last element of list
 	- appstart [x] : add element to first in list
 	- popstart [x] : remove element to first in list
-	- insert [] : add element into list based in position
+	- insert [] : add element into list based in position if apply
 	- pop [] : remove element in list based in position
 */
 
@@ -113,12 +113,33 @@ func (L *myLinkedList) popend () *myNode {
 	return rptaNode
 }
 
+func (L *myLinkedList) insert (data string, pos int) bool {
+	if L.length < pos || pos < 1 {
+		return false
+	}
+	if pos  == 1 {
+		newNode := &myNode{ value: data, next: L.head }
+		L.head = newNode
+	} else {
+		previousNode := L.head
+		for idx := 1; idx < pos - 1 ; idx++ {
+			previousNode = previousNode.next
+		}
+		newNode := &myNode{ value: data, next: previousNode.next }
+		previousNode.next = newNode
+	}
+	L.length++
+	return true
+}
+
 func main(){
 	testingList := myLinkedList{length: 0}
+	fmt.Println(testingList.head)
 	testingList.append("hola")
 	testingList.append("que")
 	testingList.append("tal")
 	testingList.append("?")
-	fmt.Println(testingList.popend())
+	testingList.display()
+	testingList.insert("¿", 0)
 	testingList.display()
 }
