@@ -79,9 +79,10 @@ func (L *myLinkedList) appstart (data string){
 		newNode.next = L.head
 		L.head = newNode
 	}
+	L.length++;
 }
 
-/// pop first in list
+/// pop first element in list
 func (L* myLinkedList) popstart () *myNode{
 	var headNode *myNode
 	headNode = nil
@@ -89,17 +90,37 @@ func (L* myLinkedList) popstart () *myNode{
 		headNode = L.head
 		L.head = L.head.next
 	}
+	L.length--;
 	return headNode
+}
+
+/// pop last element in list
+func (L *myLinkedList) popend () *myNode {
+	var rptaNode *myNode
+	rptaNode = nil
+	if L.length >= 1 {
+		rptaNode = L.head
+		L.head = nil
+	}else{
+		nextNode := L.head
+		nextnextNode := L.head.next
+		for nextnextNode != nil {
+			nextNode = nextnextNode
+			nextnextNode = nextnextNode.next
+		}
+		rptaNode = nextnextNode
+		nextNode.next = nil
+	}
+	L.length--;
+	return rptaNode
 }
 
 func main(){
 	testingList := myLinkedList{length: 0}
 	testingList.append("hola")
 	testingList.append("que")
-	testingList.append("tal?")
-	testingList.display()
-	testingList.appstart("¿")
-	testingList.display()
-	fmt.Println(testingList.popstart())
+	testingList.append("tal")
+	testingList.append("?")
+	fmt.Println(testingList.popend())
 	testingList.display()
 }
