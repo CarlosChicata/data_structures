@@ -31,7 +31,7 @@ Contain current methods implemented in those lists.
 | append| :heavy_check_mark: | | | |
 | display | :heavy_check_mark: | | | |
 | len| :heavy_check_mark: | | | |
-| insert | :white_check_mark: | | | |
+| insert | :heavy_check_mark: | | | |
 | pop| :white_check_mark: |  | | |
 
 ## version: 0.1.0
