@@ -11,7 +11,7 @@ Methods:
 	- popend [x] : remove  last element of list
 	- appstart [x] : add element to first in list
 	- popstart [x] : remove element to first in list
-	- insert [] : add element into list based in position if apply
+	- insert [x] : add element into list based in position if apply
 	- pop [] : remove element in list based in position
 */
 
@@ -113,6 +113,7 @@ func (L *myLinkedList) popend () *myNode {
 	return rptaNode
 }
 
+/// insert element in list based in position, never insert in tail list
 func (L *myLinkedList) insert (data string, pos int) bool {
 	if L.length < pos || pos < 1 {
 		return false
