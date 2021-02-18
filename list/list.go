@@ -97,20 +97,18 @@ func (L* myLinkedList) popstart () *myNode{
 /// pop last element in list
 func (L *myLinkedList) popend () *myNode {
 	var rptaNode *myNode
-	rptaNode = nil
-	if L.length >= 1 {
-		rptaNode = L.head
-		L.head = nil
-	}else{
-		nextNode := L.head
-		nextnextNode := L.head.next
-		for nextnextNode != nil {
-			nextNode = nextnextNode
-			nextnextNode = nextnextNode.next
-		}
-		rptaNode = nextnextNode
-		nextNode.next = nil
+	nextNode := L.head
+	previousNextNode := L.head
+
+	for nextNode != nil && nextNode.next != nil {
+		previousNextNode = nextNode
+		nextNode = nextNode.next
 	}
+	rptaNode = nextNode
+	if previousNextNode != nil {
+		previousNextNode.next = nil
+	}
+	
 	L.length--;
 	return rptaNode
 }
