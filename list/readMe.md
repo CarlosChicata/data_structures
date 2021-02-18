@@ -25,7 +25,7 @@ Contain current methods implemented in those lists.
 
 | Methods | SSL | DSL | CSL | CDL |
 | ---- | ---- | ---- | ---- | ---- |
-| popend | :white_check_mark: | | | |
+| popend | :heavy_check_mark: | | | |
 | popstart| :heavy_check_mark: | | | |
 | appstart | :heavy_check_mark: | | | |
 | append| :heavy_check_mark: | | | |
