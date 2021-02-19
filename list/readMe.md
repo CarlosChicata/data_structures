@@ -32,6 +32,6 @@ Contain current methods implemented in those lists.
 | display | :heavy_check_mark: | | | |
 | len| :heavy_check_mark: | | | |
 | insert | :heavy_check_mark: | | | |
-| pop| :white_check_mark: |  | | |
+| pop| :heavy_check_mark: |  | | |
 
 ## version: 0.1.0
