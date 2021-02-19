@@ -117,8 +117,7 @@ func (L *myLinkedList) popend () *myNode {
 func (L *myLinkedList) insert (data string, pos int) bool {
 	if L.length < pos || pos < 1 {
 		return false
-	}
-	if pos  == 1 {
+	} else if pos  == 1 {
 		newNode := &myNode{ value: data, next: L.head }
 		L.head = newNode
 	} else {
@@ -133,14 +132,31 @@ func (L *myLinkedList) insert (data string, pos int) bool {
 	return true
 }
 
+func (L *myLinkedList) pop (pos int) bool {
+	if L.length < pos || pos < 1 || L.head == nil {
+		return false
+	} else if pos == 1 && L.head != nil {
+		L.head = L.head.next
+	}else {
+		previousNode := L.head
+		for idx := 1; idx < pos - 1 ; idx++ {
+			previousNode = previousNode.next
+		}
+		previousNode.next = previousNode.next.next
+	}
+	L.length--
+	return true
+}
+
 func main(){
 	testingList := myLinkedList{length: 0}
-	fmt.Println(testingList.head)
 	testingList.append("hola")
 	testingList.append("que")
 	testingList.append("tal")
 	testingList.append("?")
 	testingList.display()
-	testingList.insert("¿", 0)
+	testingList.insert("¿", 1)
+	testingList.display()
+	testingList.pop(5)
 	testingList.display()
 }
