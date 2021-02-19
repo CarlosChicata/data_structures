@@ -132,6 +132,7 @@ func (L *myLinkedList) insert (data string, pos int) bool {
 	return true
 }
 
+/// pop element in list based in position
 func (L *myLinkedList) pop (pos int) bool {
 	if L.length < pos || pos < 1 || L.head == nil {
 		return false
