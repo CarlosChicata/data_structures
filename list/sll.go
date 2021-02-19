@@ -12,7 +12,7 @@ Methods:
 	- appstart [x] : add element to first in list
 	- popstart [x] : remove element to first in list
 	- insert [x] : add element into list based in position if apply
-	- pop [] : remove element in list based in position
+	- pop [x] : remove element in list based in position
 */
 
 package main
