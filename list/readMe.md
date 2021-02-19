@@ -4,7 +4,7 @@ Contain my implementation of several type linked list to learn golang.
 # available version 
 Those are types of linked list will implement
 - [X] Simple Linked List (SLL)
-- [ ] Double Linked List (SDL)
+- [X] Double Linked List (SDL)
 - [ ] Circle Simple Linked List (CSL)
 - [ ] Circle Simple Linked List (CDL)
 
@@ -42,7 +42,7 @@ Contain current methods implemented in those lists.
 | appstart | O(1) | | | |
 | append   | O(n) | | | |
 | display  | O(n) | | | |
-| len      | O(1) | | | |
+| len      | O(1) | O(1) | | |
 | insert   | O(n) | | | |
 | pop      | O(n) | | | |
 
