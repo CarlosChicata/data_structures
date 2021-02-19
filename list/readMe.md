@@ -34,4 +34,16 @@ Contain current methods implemented in those lists.
 | insert | :heavy_check_mark: | | | |
 | pop| :heavy_check_mark: |  | | |
 
+# Implementation Based time Complexity
+| Methods  |  SSL | DSL | CSL | CDL |
+| ---- | ---- | ---- | ---- | ---- |
+| popend   | O(n) | | | | 
+| popstart | O(1) | | | |
+| appstart | O(1) | | | |
+| append   | O(n) | | | |
+| display  | O(n) | | | |
+| len      | O(1) | | | |
+| insert   | O(n) | | | |
+| pop      | O(n) | | | |
+
 ## version: 0.1.0
