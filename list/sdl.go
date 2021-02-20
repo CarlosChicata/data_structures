@@ -52,6 +52,31 @@ func (L *myDoubledList) append(data string){
 	L.length++;
 }
 
+func (L *myDoubledList) popend() *myNode {
+	var rptaNode *myNode
+
+	if L.length <= 1 {
+		rptaNode = L.head
+		L.head = nil
+		return rptaNode
+	}
+
+	currentNode := L.head
+
+	for currentNode.next != nil {
+		currentNode = currentNode.next
+	}
+
+	if currentNode.previous != nil {
+		currentNode.previous.next = nil
+		currentNode.previous = nil
+	}
+
+	L.length--;
+	return rptaNode
+}
+
+
 /// display all elements in list
 func (L *myDoubledList) display (){
 	currentNode := L.head
@@ -69,10 +94,17 @@ func (L *myDoubledList) display (){
 func main(){
 	testingList := myDoubledList{length: 0}
 	testingList.append("¿")
-	testingList.append("hola")
+	testingList.append("Hola")
 	testingList.append("que")
 	testingList.append("tal")
 	testingList.append("?")
 	testingList.display()
-	fmt.Println(testingList.len())
+	testingList.popend()
+	testingList.popend()
+	testingList.popend()
+	testingList.popend()
+	testingList.popend()
+	testingList.popend()
+	testingList.popend()
+	testingList.display()
 }
