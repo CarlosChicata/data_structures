@@ -7,7 +7,7 @@ Version: 1.0
 Methods:
 	- len [x] : get length of list
 	- append [x] : add element to end of list
-	- display [ ] : display element in list
+	- display [x] : display element in list
 	- popend [ ] : remove  last element of list
 	- appstart [ ] : add element to first in list
 	- popstart [ ] : remove element to first in list
@@ -38,6 +38,7 @@ func (l *myDoubledList) len() int {
 	return l.length
 }
 
+/// add element to tail of list
 func (L *myDoubledList) append(data string){ 
 	if L.length == 0 {
 		L.head = &myNode{ value: data, next: nil, previous: nil}
