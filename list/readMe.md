@@ -28,8 +28,8 @@ Contain current methods implemented in those lists.
 | popend | :heavy_check_mark: | :white_check_mark: | | |
 | popstart| :heavy_check_mark: | :white_check_mark: | | |
 | appstart | :heavy_check_mark: | :white_check_mark: | | |
-| append| :heavy_check_mark: | :white_check_mark: | | |
-| display | :heavy_check_mark: | :white_check_mark: | | |
+| append| :heavy_check_mark: | :heavy_check_mark: | | |
+| display | :heavy_check_mark: | :heavy_check_mark: | | |
 | len| :heavy_check_mark: | :heavy_check_mark: | | |
 | insert | :heavy_check_mark: | :white_check_mark: | | |
 | pop| :heavy_check_mark: | :white_check_mark: | | |
@@ -40,8 +40,8 @@ Contain current methods implemented in those lists.
 | popend   | O(n) | | | | 
 | popstart | O(1) | | | |
 | appstart | O(1) | | | |
-| append   | O(n) | | | |
-| display  | O(n) | | | |
+| append   | O(n) | O(n) | | |
+| display  | O(n) | O(n) | | |
 | len      | O(1) | O(1) | | |
 | insert   | O(n) | | | |
 | pop      | O(n) | | | |

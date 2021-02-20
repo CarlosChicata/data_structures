@@ -74,4 +74,5 @@ func main(){
 	testingList.append("tal")
 	testingList.append("?")
 	testingList.display()
+	fmt.Println(testingList.len())
 }
