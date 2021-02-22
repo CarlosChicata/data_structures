@@ -78,7 +78,6 @@ func (L *myDoubledList) popend() *myNode {
 	return rptaNode
 }
 
-
 /// display all elements in list
 func (L *myDoubledList) display (){
 	currentNode := L.head
@@ -116,16 +115,24 @@ func (L *myDoubledList) popstart () *myNode {
 	return rptaNode
 }
 
+func (L *myDoubledList) appstart (data string) {
+	if L.head == nil {
+		L.length = 1
+		L.head = &myNode{ value : data , previous : nil , next : nil }
+	}else {
+		L.head.previous = &myNode{ value : data , previous : nil , next : L.head }
+		L.head = L.head.previous
+	}
+}
+
 
 func main(){
 	testingList := myDoubledList{length: 0}
-	testingList.append("¿")
 	testingList.append("Hola")
 	testingList.append("que")
 	testingList.append("tal")
 	testingList.append("?")
 	testingList.display()
-	fmt.Println(testingList.popstart())
-	fmt.Println(testingList.head)
+	testingList.appstart("¿")
 	testingList.display()
 }
