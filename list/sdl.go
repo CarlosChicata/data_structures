@@ -52,6 +52,7 @@ func (L *myDoubledList) append(data string){
 	L.length++;
 }
 
+/// remove first element in list
 func (L *myDoubledList) popend() *myNode {
 	var rptaNode *myNode
 
@@ -91,6 +92,7 @@ func (L *myDoubledList) display (){
 	fmt.Println("-----end----")
 }
 
+/// remove first element in list
 func (L *myDoubledList) popstart () *myNode {
 	var rptaNode *myNode
 	rptaNode = nil
