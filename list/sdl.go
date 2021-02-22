@@ -59,6 +59,7 @@ func (L *myDoubledList) popend() *myNode {
 	if L.length <= 1 {
 		rptaNode = L.head
 		L.head = nil
+		L.length = 0
 		return rptaNode
 	}
 
