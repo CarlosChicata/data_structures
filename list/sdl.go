@@ -91,6 +91,29 @@ func (L *myDoubledList) display (){
 	fmt.Println("-----end----")
 }
 
+func (L *myDoubledList) popstart () *myNode {
+	var rptaNode *myNode
+	rptaNode = nil
+
+	if L.head == nil {
+		L.length = 0
+	}else if L.length == 1 {
+		rptaNode = L.head
+		L.head = nil
+		L.length = 0
+	}else {
+		rptaNode = L.head
+		L.head = L.head.next
+		L.head.previous.next = nil
+		L.head.previous = nil
+		rptaNode.next = nil
+		rptaNode.previous = nil
+	}
+
+	return rptaNode
+}
+
+
 func main(){
 	testingList := myDoubledList{length: 0}
 	testingList.append("¿")
@@ -99,12 +122,7 @@ func main(){
 	testingList.append("tal")
 	testingList.append("?")
 	testingList.display()
-	testingList.popend()
-	testingList.popend()
-	testingList.popend()
-	testingList.popend()
-	testingList.popend()
-	testingList.popend()
-	testingList.popend()
+	fmt.Println(testingList.popstart())
+	fmt.Println(testingList.head)
 	testingList.display()
 }
