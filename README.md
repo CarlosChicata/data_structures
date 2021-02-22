@@ -14,5 +14,4 @@ if the data structure can be apply the RUM theorem, then i will apply it.
 - [ ] Union-disjoint set
 - [ ] B tree
 - [ ] B+ Tree
-- [ ] 
 
