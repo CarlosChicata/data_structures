@@ -9,8 +9,8 @@ Methods:
 	- append [x] : add element to end of list
 	- display [x] : display element in list
 	- popend [x] : remove  last element of list
-	- appstart [ ] : add element to first in list
-	- popstart [ ] : remove element to first in list
+	- appstart [x] : add element to first in list
+	- popstart [x] : remove element to first in list
 	- insert [ ] : add element into list based in position if apply
 	- pop [ ] : remove element in list based in position
 */
@@ -115,6 +115,7 @@ func (L *myDoubledList) popstart () *myNode {
 	return rptaNode
 }
 
+/// add new head in list
 func (L *myDoubledList) appstart (data string) {
 	if L.head == nil {
 		L.length = 1
