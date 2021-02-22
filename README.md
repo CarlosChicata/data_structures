@@ -8,4 +8,11 @@ if the data structure can be apply the RUM theorem, then i will apply it.
 - [X] Double Linked List
 - [ ] Simple Circle List
 - [ ] Double Linked List
+- [ ] Set
+- [ ] Binary Tree
+- [ ] Red-black Tree
+- [ ] Union-disjoint set
+- [ ] B tree
+- [ ] B+ Tree
+- [ ] 
 
