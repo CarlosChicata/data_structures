@@ -26,8 +26,8 @@ Contain current methods implemented in those lists.
 | Methods | SSL | DSL | CSL | CDL |
 | ---- | ---- | ---- | ---- | ---- |
 | popend | :heavy_check_mark: | :heavy_check_mark: | | |
-| popstart| :heavy_check_mark: | :white_check_mark: | | |
-| appstart | :heavy_check_mark: | :white_check_mark: | | |
+| popstart| :heavy_check_mark: | :heavy_check_mark: | | |
+| appstart | :heavy_check_mark: | :heavy_check_mark: | | |
 | append| :heavy_check_mark: | :heavy_check_mark: | | |
 | display | :heavy_check_mark: | :heavy_check_mark: | | |
 | len| :heavy_check_mark: | :heavy_check_mark: | | |
@@ -38,8 +38,8 @@ Contain current methods implemented in those lists.
 | Methods  |  SSL | DSL | CSL | CDL |
 | ---- | ---- | ---- | ---- | ---- |
 | popend   | O(n) | O(n) | | | 
-| popstart | O(1) | | | |
-| appstart | O(1) | | | |
+| popstart | O(1) | O(1) | | |
+| appstart | O(1) | O(1) | | |
 | append   | O(n) | O(n) | | |
 | display  | O(n) | O(n) | | |
 | len      | O(1) | O(1) | | |
