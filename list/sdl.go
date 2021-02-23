@@ -11,7 +11,7 @@ Methods:
 	- popend [x] : remove  last element of list
 	- appstart [x] : add element to first in list
 	- popstart [x] : remove element to first in list
-	- insert [ ] : add element into list based in position if apply
+	- insert [x] : add element into list based in position if apply
 	- pop [ ] : remove element in list based in position
 */
 package main
