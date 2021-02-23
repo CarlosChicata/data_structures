@@ -12,7 +12,7 @@ Methods:
 	- appstart [x] : add element to first in list
 	- popstart [x] : remove element to first in list
 	- insert [x] : add element into list based in position if apply
-	- pop [ ] : remove element in list based in position
+	- pop [x] : remove element in list based in position
 */
 package main
 
@@ -150,6 +150,7 @@ func (L *myDoubledList) insert (data string, pos int) bool {
 	return true
 }
 
+/// pop element of list based in position
 func (L *myDoubledList) pop (pos int) *myNode {
 	if L.length < pos || pos < 1 || L.head == nil { // 5
 		return nil
