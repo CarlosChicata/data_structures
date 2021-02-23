@@ -92,7 +92,7 @@ func (L *myDoubledList) display (){
 	fmt.Println("-----end----")
 }
 
-/// remove first element in list
+/// remove first element in list --- decrement length
 func (L *myDoubledList) popstart () *myNode {
 	var rptaNode *myNode
 	rptaNode = nil
@@ -115,7 +115,7 @@ func (L *myDoubledList) popstart () *myNode {
 	return rptaNode
 }
 
-/// add new head in list
+/// add new head in list --- imcrement length
 func (L *myDoubledList) appstart (data string) {
 	if L.head == nil {
 		L.length = 1
@@ -126,14 +126,35 @@ func (L *myDoubledList) appstart (data string) {
 	}
 }
 
+/// insert element in list based in position, never insert in tail list
+func (L *myDoubledList) insert (data string, pos int) bool {
+	if L.length < pos || pos < 1 {
+		return false
+	} else if pos  == 1 {
+		newNode :=  &myNode{ value: data, next: L.head, previous: nil }
+		if L.head != nil {
+			L.head.previous = newNode
+		}
+		L.head = newNode
+	}else {
+		previousNode := L.head
+		for idx := 1; idx < pos - 1; idx++ {
+			previousNode = previousNode.next
+		}
+		newNode := &myNode{ value: data, next: previousNode.next, previous: previousNode }
+		previousNode.next = newNode
+	}
+	L.length++
+	return true
+}
+
 
 func main(){
 	testingList := myDoubledList{length: 0}
 	testingList.append("Hola")
 	testingList.append("que")
 	testingList.append("tal")
-	testingList.append("?")
 	testingList.display()
-	testingList.appstart("¿")
+	testingList.insert("¿", 3)
 	testingList.display()
 }
