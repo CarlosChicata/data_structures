@@ -110,6 +110,7 @@ func (L *myDoubledList) popstart () *myNode {
 		L.head.previous = nil
 		rptaNode.next = nil
 		rptaNode.previous = nil
+		L.length--
 	}
 
 	return rptaNode
@@ -123,6 +124,7 @@ func (L *myDoubledList) appstart (data string) {
 	}else {
 		L.head.previous = &myNode{ value : data , previous : nil , next : L.head }
 		L.head = L.head.previous
+		L.length++
 	}
 }
 
@@ -157,4 +159,7 @@ func main(){
 	testingList.display()
 	testingList.insert("¿", 3)
 	testingList.display()
+	testingList.popstart()
+	testingList.display()
+	fmt.Println(testingList.length)
 }
