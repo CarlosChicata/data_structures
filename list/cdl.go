@@ -1,13 +1,13 @@
 /*
 Purpose:
-	implement my version of circle simple linked list.
+	implement my version of circle double linked list.
 
 Version: 1.0
 
 Methods:
 	- len [x] : get length of list
 	- append [x] : add element to end of list
-	- display [ ] : display element in list
+	- display [x] : display element in list
 	- popend [ ] : remove  last element of list
 	- appstart [ ] : add element to first in list
 	- popstart [ ] : remove element to first in list
@@ -28,18 +28,18 @@ type myNode struct {
 	previous *myNode
 }
 
-type myCircleList struct {
+type myCircleDList struct {
 	length int
 	head *myNode
 }
 
 /// get lenght of list
-func (l *myCircleList) len() int {
+func (l *myCircleDList) len() int {
 	return l.length
 }
 
 /// add element to last of list
-func (L *myCircleList) append (data string) {
+func (L *myCircleDList) append (data string) {
 	if L.head == nil {
 		L.head = &myNode{ value: data, next: nil, previous: nil }
 		L.head.next = L.head
@@ -53,7 +53,7 @@ func (L *myCircleList) append (data string) {
 }
 
 /// display all elements in list
-func (L *myCircleList) display (){
+func (L *myCircleDList) display (){
 	currentNode := L.head
 	index := 1
 	var msg string
@@ -67,7 +67,7 @@ func (L *myCircleList) display (){
 }
 
 func main(){
-	testingList := myCircleList{length: 0}
+	testingList := myCircleDList{length: 0}
 	testingList.append("Hola")
 	testingList.append("que")
 	testingList.display()
