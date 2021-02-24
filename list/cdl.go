@@ -66,11 +66,27 @@ func (L *myCircleDList) display (){
 	fmt.Println("-----end----")
 }
 
+func (L *myCircleDList) appstart (data string) {
+	if L.head == nil {
+		L.head = &myNode{ value: data, next: nil, previous: nil }
+		L.head.next = L.head
+		L.head.previous = L.head
+	}else {
+		newNode := &myNode{ value: data, next: L.head, previous: L.head.previous }
+		L.head.previous.next = newNode
+		L.head.previous = newNode
+		L.head = newNode
+	}
+	L.length++
+}
+
 func main(){
 	testingList := myCircleDList{length: 0}
 	testingList.append("Hola")
 	testingList.append("que")
-	testingList.display()
 	testingList.append("tal")
+	testingList.append("?")
+	testingList.display()
+	testingList.appstart("¿")
 	testingList.display()
 }
