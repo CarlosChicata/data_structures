@@ -16,7 +16,7 @@ Methods:
 */
 package main
 
-import "fmt"
+///import "fmt"
 
 
 //////////////////////
@@ -28,17 +28,33 @@ type myNode struct {
 	previous *myNode
 }
 
-type circleList struct {
+type myCircleList struct {
 	length int
 	head *myNode
 }
 
 /// get lenght of list
-func (l *myDoubledList) len() int {
+func (l *myCircleList) len() int {
 	return l.length
+}
+
+func (L *myCircleList) append (data string) {
+	if L.head == nil {
+		L.head = &myNode{ value: data, next: nil, previous: nil }
+		L.head.next = L.head
+		L.head.previous = L.head
+	}else {
+		newNode := &myNode{ value: data, next: L.head, previous: L.head.previous }
+		L.head.previous.next = newNode
+		L.head.previous = newNode
+	}
+	L.length++
 }
 
 
 func main(){
-
+	testingList := myCircleList{length: 0}
+	testingList.append("Hola")
+	testingList.append("que")
+	testingList.append("tal")
 }
