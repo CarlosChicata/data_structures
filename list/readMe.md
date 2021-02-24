@@ -25,14 +25,14 @@ Contain current methods implemented in those lists.
 
 | Methods | SSL | DSL | CSL | CDL |
 | ---- | ---- | ---- | ---- | ---- |
-| popend | :heavy_check_mark: | :heavy_check_mark: |  | :heavy_check_mark: |
-| popstart| :heavy_check_mark: | :heavy_check_mark: |  | :white_check_mark: |
-| appstart | :heavy_check_mark: | :heavy_check_mark: |  | :heavy_check_mark: |
-| append| :heavy_check_mark: | :heavy_check_mark: |  | :heavy_check_mark: |
-| display | :heavy_check_mark: | :heavy_check_mark: | | :heavy_check_mark: |
-| len| :heavy_check_mark: | :heavy_check_mark: |  | :heavy_check_mark: |
-| insert | :heavy_check_mark: | :heavy_check_mark: | | :white_check_mark: |
-| pop| :heavy_check_mark: | :heavy_check_mark: | | :white_check_mark: |
+| popend | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
+| popstart| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
+| appstart | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
+| append| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
+| display | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
+| len| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
+| insert | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
+| pop| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
 
 # Implementation Based time Complexity
 | Methods  |  SSL | DSL | CSL | CDL |
