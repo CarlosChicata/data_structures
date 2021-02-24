@@ -9,7 +9,7 @@ Methods:
 	- append [x] : add element to end of list
 	- display [x] : display element in list
 	- popend [ ] : remove  last element of list
-	- appstart [ ] : add element to first in list
+	- appstart [x] : add element to first in list
 	- popstart [ ] : remove element to first in list
 	- insert [ ] : add element into list based in position if apply
 	- pop [ ] : remove element in list based in position
@@ -66,6 +66,7 @@ func (L *myCircleDList) display (){
 	fmt.Println("-----end----")
 }
 
+/// add element to first of list
 func (L *myCircleDList) appstart (data string) {
 	if L.head == nil {
 		L.head = &myNode{ value: data, next: nil, previous: nil }
