@@ -81,13 +81,34 @@ func (L *myCircleDList) appstart (data string) {
 	L.length++
 }
 
+func (L *myCircleDList) popend () *myNode {
+	if L.length == 0 || L.head == nil {
+		return nil
+	}else if L.length == 1 {
+		rptaNode := L.head
+		L.head = nil
+		L.length = 0
+		return rptaNode
+	}else {
+		rptaNode := L.head.previous
+		rptaNode.previous.next = L.head
+		L.head.previous = rptaNode.previous
+		rptaNode.previous = nil
+		rptaNode.next = nil
+		L.length--
+		return rptaNode
+	}
+}
+
 func main(){
 	testingList := myCircleDList{length: 0}
 	testingList.append("Hola")
 	testingList.append("que")
 	testingList.append("tal")
 	testingList.append("?")
+	testingList.append("?")
 	testingList.display()
 	testingList.appstart("¿")
+	testingList.popend()
 	testingList.display()
 }
