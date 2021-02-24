@@ -5,7 +5,7 @@ Contain my implementation of several type linked list to learn golang.
 Those are types of linked list will implement
 - [X] Simple Linked List (SLL)
 - [X] Double Linked List (SDL)
-- [ ] Circle Simple Linked List (CSL)
+- [X] Circle Simple Linked List (CSL)
 - [ ] Circle Simple Linked List (CDL)
 
 # Methods
@@ -25,14 +25,14 @@ Contain current methods implemented in those lists.
 
 | Methods | SSL | DSL | CSL | CDL |
 | ---- | ---- | ---- | ---- | ---- |
-| popend | :heavy_check_mark: | :heavy_check_mark: | | |
-| popstart| :heavy_check_mark: | :heavy_check_mark: | | |
-| appstart | :heavy_check_mark: | :heavy_check_mark: | | |
-| append| :heavy_check_mark: | :heavy_check_mark: | | |
-| display | :heavy_check_mark: | :heavy_check_mark: | | |
-| len| :heavy_check_mark: | :heavy_check_mark: | | |
-| insert | :heavy_check_mark: | :heavy_check_mark: | | |
-| pop| :heavy_check_mark: | :heavy_check_mark: | | |
+| popend | :heavy_check_mark: | :heavy_check_mark: |  | :white_check_mark: |
+| popstart| :heavy_check_mark: | :heavy_check_mark: |  | :white_check_mark: |
+| appstart | :heavy_check_mark: | :heavy_check_mark: |  | :white_check_mark: |
+| append| :heavy_check_mark: | :heavy_check_mark: |  | :heavy_check_mark: |
+| display | :heavy_check_mark: | :heavy_check_mark: | | :heavy_check_mark: |
+| len| :heavy_check_mark: | :heavy_check_mark: |  | :heavy_check_mark: |
+| insert | :heavy_check_mark: | :heavy_check_mark: | | :white_check_mark: |
+| pop| :heavy_check_mark: | :heavy_check_mark: | | :white_check_mark: |
 
 # Implementation Based time Complexity
 | Methods  |  SSL | DSL | CSL | CDL |
@@ -40,9 +40,9 @@ Contain current methods implemented in those lists.
 | popend   | O(n) | O(n) | | | 
 | popstart | O(1) | O(1) | | |
 | appstart | O(1) | O(1) | | |
-| append   | O(n) | O(n) | | |
-| display  | O(n) | O(n) | | |
-| len      | O(1) | O(1) | | |
+| append   | O(n) | O(n) | | O(1) |
+| display  | O(n) | O(n) | | O(n) |
+| len      | O(1) | O(1) | | O(1) |
 | insert   | O(n) | O(n) | | |
 | pop      | O(n) | O(n) | | |
 
