@@ -5,8 +5,8 @@ Purpose:
 Version: 1.0
 
 Methods:
-	- len [ ] : get length of list
-	- append [ ] : add element to end of list
+	- len [x] : get length of list
+	- append [x] : add element to end of list
 	- display [ ] : display element in list
 	- popend [ ] : remove  last element of list
 	- appstart [ ] : add element to first in list
@@ -38,6 +38,7 @@ func (l *myCircleList) len() int {
 	return l.length
 }
 
+/// add element to last of list
 func (L *myCircleList) append (data string) {
 	if L.head == nil {
 		L.head = &myNode{ value: data, next: nil, previous: nil }
