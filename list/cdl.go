@@ -8,7 +8,7 @@ Methods:
 	- len [x] : get length of list
 	- append [x] : add element to end of list
 	- display [x] : display element in list
-	- popend [ ] : remove  last element of list
+	- popend [x] : remove  last element of list
 	- appstart [x] : add element to first in list
 	- popstart [ ] : remove element to first in list
 	- insert [ ] : add element into list based in position if apply
@@ -81,6 +81,7 @@ func (L *myCircleDList) appstart (data string) {
 	L.length++
 }
 
+/// pop last element of list
 func (L *myCircleDList) popend () *myNode {
 	if L.length == 0 || L.head == nil {
 		return nil
