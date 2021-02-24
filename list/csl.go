@@ -33,6 +33,10 @@ type circleList struct {
 	head *myNode
 }
 
+/// get lenght of list
+func (l *myDoubledList) len() int {
+	return l.length
+}
 
 
 func main(){
