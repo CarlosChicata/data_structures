@@ -16,7 +16,7 @@ Methods:
 */
 package main
 
-///import "fmt"
+import "fmt"
 
 
 //////////////////////
@@ -52,10 +52,25 @@ func (L *myCircleList) append (data string) {
 	L.length++
 }
 
+/// display all elements in list
+func (L *myCircleList) display (){
+	currentNode := L.head
+	index := 1
+	var msg string
+	for index <= L.length && currentNode != nil {
+		msg = fmt.Sprintf("position %d : %s", index, currentNode.value)
+		fmt.Println(msg)
+		currentNode = currentNode.next
+		index++
+	}
+	fmt.Println("-----end----")
+}
 
 func main(){
 	testingList := myCircleList{length: 0}
 	testingList.append("Hola")
 	testingList.append("que")
+	testingList.display()
 	testingList.append("tal")
+	testingList.display()
 }
