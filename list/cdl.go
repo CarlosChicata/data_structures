@@ -10,7 +10,7 @@ Methods:
 	- display [x] : display element in list
 	- popend [x] : remove  last element of list
 	- appstart [x] : add element to first in list
-	- popstart [ ] : remove element to first in list
+	- popstart [x] : remove element to first in list
 	- insert [ ] : add element into list based in position if apply
 	- pop [ ] : remove element in list based in position
 */
@@ -101,6 +101,7 @@ func (L *myCircleDList) popend () *myNode {
 	}
 }
 
+/// pop start element of list
 func (L *myCircleDList) popstart () *myNode {
 	if L.length == 0 || L.head == nil {
 		return nil
