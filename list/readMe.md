@@ -5,7 +5,7 @@ Contain my implementation of several type linked list to learn golang.
 Those are types of linked list will implement
 - [X] Simple Linked List (SLL)
 - [X] Double Linked List (SDL)
-- [ ] Circle Simple Linked List (CSL)
+- [X] Circle Simple Linked List (CSL)
 - [X] Circle Double Linked List (CDL)
 
 # Methods
@@ -30,7 +30,7 @@ Contain current methods implemented in those lists.
 | appstart | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
 | append| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
 | display | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
-| len| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
+| len| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | insert | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
 | pop| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
 
@@ -42,7 +42,7 @@ Contain current methods implemented in those lists.
 | appstart | O(1) | O(1) | | O(1) |
 | append   | O(n) | O(n) | | O(1) |
 | display  | O(n) | O(n) | | O(n) |
-| len      | O(1) | O(1) | | O(1) |
+| len      | O(1) | O(1) | O(1) | O(1) |
 | insert   | O(n) | O(n) | | O(n) |
 | pop      | O(n) | O(n) | | O(n) |
 
