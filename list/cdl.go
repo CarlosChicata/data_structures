@@ -124,6 +124,29 @@ func (L *myCircleDList) popstart () *myNode {
 	}
 }
 
+func (L *myCircleDList) pop (pos int) *myNode {
+	if L.length < pos || pos < 1 || L.head == nil {
+		return nil
+	} else if pos == 1 && L.head != nil {
+		rptaNode := L.popstart()
+		return rptaNode
+	} else {
+		previousNode := L.head
+
+		for idx := 1; idx < pos ; idx++ {
+			previousNode = previousNode.next
+		}
+
+		myRpta := previousNode
+		myRpta.previous.next = myRpta.next
+		myRpta.next.previous = myRpta.previous
+		myRpta.previous = nil
+		myRpta.next = nil
+		L.length--
+		return myRpta
+	}
+}
+
 
 func main(){
 	testingList := myCircleDList{length: 0}
@@ -133,7 +156,8 @@ func main(){
 	testingList.append("?")
 	testingList.display()
 	testingList.appstart("¿")
-	testingList.popstart()
-	testingList.popstart()
+	testingList.display()
+	testingList.pop(1)
+	testingList.pop(3)
 	testingList.display()
 }
