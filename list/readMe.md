@@ -31,7 +31,7 @@ Contain current methods implemented in those lists.
 | append| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
 | display | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
 | len| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
-| insert | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
+| insert | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
 | pop| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
 
 # Implementation Based time Complexity
@@ -43,7 +43,7 @@ Contain current methods implemented in those lists.
 | append   | O(n) | O(n) | | O(1) |
 | display  | O(n) | O(n) | | O(n) |
 | len      | O(1) | O(1) | | O(1) |
-| insert   | O(n) | O(n) | | |
+| insert   | O(n) | O(n) | | O(n) |
 | pop      | O(n) | O(n) | | O(n) |
 
 ## version: 0.1.0
