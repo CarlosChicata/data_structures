@@ -12,7 +12,7 @@ Methods:
 	- appstart [x] : add element to first in list
 	- popstart [x] : remove element to first in list
 	- insert [ ] : add element into list based in position if apply
-	- pop [ ] : remove element in list based in position
+	- pop [x] : remove element in list based in position
 */
 package main
 
@@ -124,6 +124,7 @@ func (L *myCircleDList) popstart () *myNode {
 	}
 }
 
+/// pop element of list based in position
 func (L *myCircleDList) pop (pos int) *myNode {
 	if L.length < pos || pos < 1 || L.head == nil {
 		return nil
