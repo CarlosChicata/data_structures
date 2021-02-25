@@ -6,7 +6,7 @@ if the data structure can be apply the RUM theorem, then i will apply it.
 ## Implemented data structure list
 - [x] Simple Linked List
 - [X] Double Linked List
-- [ ] Simple Circle List
+- [X] Simple Circle List
 - [X] Double Linked List
 - [ ] Set
 - [ ] Binary Tree
