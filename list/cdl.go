@@ -148,6 +148,27 @@ func (L *myCircleDList) pop (pos int) *myNode {
 	}
 }
 
+/// pop element of list based in position
+func (L *myCircleDList) insert (data string, pos int) bool {
+	if L.length < pos || pos < 1 || L.head == nil {
+		return false
+	} else if pos == 1 && L.head != nil {
+		L.appstart(data)
+		return true
+	} else {
+		previousNode := L.head
+
+		for idx := 1; idx < pos -1 ; idx++ {
+			previousNode = previousNode.next
+		}
+
+		myRpta := &myNode{ value: data, next: previousNode.next, previous: previousNode }
+		previousNode.next = myRpta
+		myRpta.next.previous = myRpta
+		L.length++
+		return true
+	}
+}
 
 func main(){
 	testingList := myCircleDList{length: 0}
@@ -160,5 +181,7 @@ func main(){
 	testingList.display()
 	testingList.pop(1)
 	testingList.pop(3)
+	testingList.insert("tal", 2)
+	testingList.insert("¿", 4)
 	testingList.display()
 }
