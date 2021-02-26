@@ -37,7 +37,22 @@ func (l *myCircleList) len() int {
 	return l.length
 }
 
+/// add element to last of list
+func (L *myCircleList) append (data string) {
+	if L.head == nil {
+		L.head = &myNode{ value: data, next: nil }
+		L.head.next = L.head
+	}else {
+		newNode := &myNode{ value: data, next: L.head }
+		previousNode = L.head
 
+		for idx := 1; idx <= L.length ; idx++ {
+			previousNode = previousNode.next
+		}
+		previousNode.next = newMyNode
+	}
+	L.length++
+}
 
 func main(){
 	testingList := myCircleList{length: 0}
