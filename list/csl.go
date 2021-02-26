@@ -53,6 +53,24 @@ func (L *myCircleList) append (data string) {
 	L.length++
 }
 
+/// add element to start of list
+func (L *myCircleList) appstart (data string) {
+	if L.head == nil {
+		L.head = &myNode{ value: data, next: nil }
+		L.head.next = L.head
+	}else {
+		newNode := &myNode{ value: data, next: L.head}
+		previousNode := L.head
+
+		for previousNode.next != L.head {
+			previousNode = previousNode.next
+		}
+		previousNode.next = newNode
+		L.head = newNode
+	}
+	L.length++
+}
+
 /// display all elements in list
 func (L *myCircleList) display (){
 	currentNode := L.head
@@ -69,11 +87,11 @@ func (L *myCircleList) display (){
 
 func main(){
 	testingList := myCircleList{length: 0}
-	testingList.append("¿")
-	testingList.append("hola")
+	testingList.appstart("hola")
 	testingList.append("que")
 	testingList.append("tal")
 	testingList.append("?")
+	testingList.appstart("¿")
 	fmt.Println(testingList.length)
 	testingList.display()
 }
