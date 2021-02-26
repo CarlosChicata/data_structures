@@ -6,8 +6,8 @@ Version: 1.0
 
 Methods:
 	- len [x] : get length of list
-	- append [ ] : add element to end of list
-	- display [ ] : display element in list
+	- append [x] : add element to end of list
+	- display [x] : display element in list
 	- popend [ ] : remove  last element of list
 	- appstart [ ] : add element to first in list
 	- popstart [ ] : remove element to first in list
