@@ -85,6 +85,27 @@ func (L *myCircleList) display (){
 	fmt.Println("-----end----\n")
 }
 
+/// remove last element in list
+func (L *myCircleList) popend () *myNode {
+	if L.length == 0 || L.head == nil {
+		return nil
+	} else if L.length == 1 || L.head == L.head.next {
+		newNode := L.head
+		newNode.next = nil
+		L.head = nil
+		L.length = 0
+		return newNode
+	} else { 
+		previousNode := L.head
+
+		for idx := 1 ; idx < L.length ; idx++ {
+			previousNode = previousNode.next
+		}
+		previousNode.next = L.head
+	}
+	L.length++
+}
+
 func main(){
 	testingList := myCircleList{length: 0}
 	testingList.appstart("hola")
