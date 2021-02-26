@@ -9,7 +9,7 @@ Methods:
 	- append [x] : add element to end of list
 	- display [x] : display element in list
 	- popend [ ] : remove  last element of list
-	- appstart [ ] : add element to first in list
+	- appstart [x] : add element to first in list
 	- popstart [ ] : remove element to first in list
 	- insert [ ] : add element into list based in position if apply
 	- pop [ ] : remove element in list based in position
