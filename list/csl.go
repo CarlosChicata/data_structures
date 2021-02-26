@@ -101,18 +101,24 @@ func (L *myCircleList) popend () *myNode {
 		for idx := 1 ; idx < L.length ; idx++ {
 			previousNode = previousNode.next
 		}
+		newNode := previousNode.next
+		L.length--
 		previousNode.next = L.head
+		return newNode
 	}
-	L.length++
 }
 
 func main(){
 	testingList := myCircleList{length: 0}
 	testingList.appstart("hola")
+	testingList.popend()
+	testingList.append("hola")
 	testingList.append("que")
 	testingList.append("tal")
 	testingList.append("?")
+	testingList.append("?")
 	testingList.appstart("¿")
+	testingList.popend()
 	fmt.Println(testingList.length)
 	testingList.display()
 }
