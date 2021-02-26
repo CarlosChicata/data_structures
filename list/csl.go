@@ -54,7 +54,25 @@ func (L *myCircleList) append (data string) {
 	L.length++
 }
 
+/// display all elements in list
+func (L *myCircleList) display (){
+	currentNode := L.head
+	index := 1
+	var msg string
+	for idx := 1; idx <= L.length; idx++ {
+		msg = fmt.Sprintf("position %d : %s", index, currentNode.value)
+		fmt.Println(msg)
+		currentNode = currentNode.next
+	}
+	fmt.Println("-----end----")
+}
+
 func main(){
 	testingList := myCircleList{length: 0}
+	testingList.append("¿")
+	testingList.append("hola")
+	testingList.append("que")
+	testingList.append("tal")
 	fmt.Println(testingList.length)
+	testingList.display()
 }
