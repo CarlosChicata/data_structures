@@ -31,10 +31,10 @@ Contain current methods implemented in those lists.
 | append| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | display | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | len| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| insert | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
-| pop| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: |
+| insert | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| pop| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
-# Implementation Based time Complexity
+# Implementation Based time Complexity:  worst case
 | Methods  |  SSL | DSL | CSL | CDL |
 | ---- | ---- | ---- | ---- | ---- |
 | popend   | O(n) | O(n) | O(n) | O(1) | 
