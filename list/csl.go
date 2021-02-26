@@ -157,6 +157,27 @@ func (L *myCircleList) pop (pos int) *myNode {
 	}
 }
 
+/// pop element of list based in position - not insert to last position
+func (L *myCircleList) insert (data string, pos int) bool {
+	if L.length < pos || pos < 1 || L.head == nil {
+		return false
+	} else if pos == 1 {
+		L.appstart(data)
+		return true
+	} else {
+		previousNode := L.head
+
+		for idx := 1; idx < pos -1 ; idx++ {
+			previousNode = previousNode.next
+		}
+
+		myRpta := &myNode{ value: data, next: previousNode.next }
+		previousNode.next = myRpta
+		L.length++
+		return true
+	}
+}
+
 func main(){
 	testingList := myCircleList{length: 0}
 	testingList.appstart("hola")
@@ -170,6 +191,9 @@ func main(){
 	testingList.popend()
 	testingList.display()
 	testingList.pop(5)
+	testingList.insert("amigo" , 2)
+	testingList.insert("?" , 5)
 	fmt.Println(testingList.length)
+	
 	testingList.display()
 }
