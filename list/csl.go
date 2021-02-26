@@ -43,13 +43,12 @@ func (L *myCircleList) append (data string) {
 		L.head = &myNode{ value: data, next: nil }
 		L.head.next = L.head
 	}else {
-		newNode := &myNode{ value: data, next: L.head }
-		previousNode = L.head
+		previousNode := L.head
 
-		for idx := 1; idx <= L.length ; idx++ {
+		for previousNode.next != L.head {
 			previousNode = previousNode.next
 		}
-		previousNode.next = newMyNode
+		previousNode.next = &myNode{ value: data, next: L.head}
 	}
 	L.length++
 }
@@ -63,8 +62,9 @@ func (L *myCircleList) display (){
 		msg = fmt.Sprintf("position %d : %s", index, currentNode.value)
 		fmt.Println(msg)
 		currentNode = currentNode.next
+		index++
 	}
-	fmt.Println("-----end----")
+	fmt.Println("-----end----\n")
 }
 
 func main(){
@@ -73,6 +73,7 @@ func main(){
 	testingList.append("hola")
 	testingList.append("que")
 	testingList.append("tal")
+	testingList.append("?")
 	fmt.Println(testingList.length)
 	testingList.display()
 }
