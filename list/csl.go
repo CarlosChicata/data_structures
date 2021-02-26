@@ -108,6 +108,33 @@ func (L *myCircleList) popend () *myNode {
 	}
 }
 
+/// pop first element in list
+func (L* myCircleList) popstart () *myNode{
+	if L.length == 0 || L.head == nil {
+		return nil
+	} else if L.length == 1 || L.head == L.head.next {
+		newNode := L.head
+		newNode.next = nil
+		L.head = nil
+		L.length = 0
+		return newNode
+	} else { 
+		LastNode := L.head
+		newNode := L.head
+
+		for idx := 1 ; idx <= L.length ; idx++ {
+			LastNode = LastNode.next
+		}
+
+		LastNode.next = L.head.next
+		L.head = L.head.next
+		newNode.next = nil
+		L.length--
+		return newNode
+	}
+}
+
+
 func main(){
 	testingList := myCircleList{length: 0}
 	testingList.appstart("hola")
@@ -119,6 +146,8 @@ func main(){
 	testingList.append("?")
 	testingList.appstart("¿")
 	testingList.popend()
+	testingList.popstart()
+	testingList.popstart()
 	fmt.Println(testingList.length)
 	testingList.display()
 }
