@@ -15,10 +15,27 @@ All lists contain those methods in common.
 - **intersect**: all elements will intersect in two sets.
 - **belong**: element belong this set.
 - **difference**: all element will not intersect in two sets.
-- **len**: length of set.
+- **len**: count all elements of universe set.
+
+But disjoint-union version, i need to add some methods.
+
+- **union**: merge two set
+- **unionIn**: merge element into set
+- **parentIn**: get parent of set
+- **sizeIn**: get element inside set
+
+# Optimization of Disjoint-union set
+I can implement several methods to optimize this data structure:
+
+- [ ] union by size: use the parent by set with more member.
+- [ ] union by rank: use the parent by set with more depth.
+- [ ] path compression: when insert element in set, directly point to parent.
+- [ ] path halving: ??
+- [ ] path splitting: ?? 
+
 
 # Table of implemented methods
-Contain current methods implemented in those lists.
+Contain counmmon methods implemented in those sets.
 
 | Methods | set | DSt | dus |
 | ---- | ---- | ---- | ---- |
