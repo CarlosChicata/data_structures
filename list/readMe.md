@@ -46,4 +46,4 @@ Contain current methods implemented in those lists.
 | insert   | O(n) | O(n) | O(n) | O(n) |
 | pop      | O(n) | O(n) | O(n) | O(n) |
 
-## version: 0.2.0
+## version: 1.0.0
