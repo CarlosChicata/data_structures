@@ -5,13 +5,13 @@ Purpose:
 Version: 1.0
 
 Methods:
-	- add [ ] : add element in set if not exists
+	- add [x] : add element in set if not exists
 	- remove [ ] : remove element in set if exists
 	- intersec [ ] : all elements will intersect in two sets
-	- belong [ ] : element belong this set
+	- belong [x] : element belong this set
 	- difference [ ] : all elemnet will not interset in two sets
 	- len [ ] : count all elements of universe set
-	- display [ ] : display all element in universe set
+	- display [x] : display all element in universe set
 */
 
 package main
@@ -23,7 +23,7 @@ type uniqueSet struct {
 	universe []string
 }
 
-
+/// verify if element inside set
 func (S *uniqueSet) belong (element string) bool {
 	isBelong := false
 	for _, value := range S.universe {
@@ -35,6 +35,7 @@ func (S *uniqueSet) belong (element string) bool {
 	return isBelong
 }
 
+/// display all element in set
 func (S *uniqueSet) display () {
 	var msg string
 	for _, value := range S.universe {
@@ -44,6 +45,7 @@ func (S *uniqueSet) display () {
 	fmt.Println("------END------")
 }
 
+/// add element in set if not exists
 func (S *uniqueSet) add (element string) bool {
 	var isBelong bool;
 	isBelong = S.belong(element)
