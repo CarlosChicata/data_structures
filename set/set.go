@@ -11,13 +11,15 @@ Methods:
 	- belong [ ] : element belong this set
 	- difference [ ] : all elemnet will not interset in two sets
 	- len [ ] : count all elements of universe set
+	- display [] : display all element in universe set
 */
 
 package main
 
 import "fmt"
 
-type uniqeSet {
+
+type uniqueSet {
 	
 }
 
@@ -25,14 +27,4 @@ type uniqeSet {
 
 
 func main(){
-	testingList := myLinkedList{length: 0}
-	testingList.append("hola")
-	testingList.append("que")
-	testingList.append("tal")
-	testingList.append("?")
-	testingList.display()
-	testingList.insert("¿", 1)
-	testingList.display()
-	testingList.pop(5)
-	testingList.display()
 }
