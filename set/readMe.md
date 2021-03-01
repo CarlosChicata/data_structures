@@ -4,7 +4,7 @@ Contain my implementation of several type of sets to learn golang.
 # available implementations 
 Those are types of sets will implement
 - [ ] Unique elements in Set (set)
-- [ ] Non-unique elements in set (nst)
+- [ ] Non-unique elements in set (dst)
 - [ ] Disjoint-union set (dus)
 
 # Methods
@@ -16,6 +16,7 @@ All lists contain those methods in common.
 - **belong**: element belong this set.
 - **difference**: all element will not intersect in two sets.
 - **len**: count all elements of universe set.
+- **display**: display all elements in set.
 
 But disjoint-union version, i need to add some methods.
 
@@ -37,7 +38,7 @@ I can implement several methods to optimize this data structure:
 # Table of implemented methods
 Contain counmmon methods implemented in those sets.
 
-| Methods | set | DSt | dus |
+| Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
 | add | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | remove | :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -46,6 +47,20 @@ Contain counmmon methods implemented in those sets.
 | difference | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | len| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | insert | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| display | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
+# Table of time complexity - worst case
+Contain all time complexity of implementations
+
+| Methods | set | dst | dus |
+| ---- | ---- | ---- | ---- |
+| add        |  |  |  |
+| remove     |  |  |  |
+| intersect  |  |  |  |
+| belong     |  |  |  |
+| difference |  |  |  |
+| len        |  |  |  |
+| insert     |  |  |  |
+| display    |  |  |  |
 
 ## version: '.1.0
