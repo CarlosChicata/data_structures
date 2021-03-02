@@ -64,6 +64,19 @@ func (S *uniqueSet) len() int {
 	return len(S)
 }
 
+/// remove element in set if exists
+func (S *uniqueSet) remove(element string) bool {
+	rptaFlag := false
+	newUniverse []string
+	for _, value in range S.universe {
+		if value == element {
+			rptaFlag = true
+		}else{
+			newUniverse.append(value)
+		}
+	}
+	return rptaFlag
+}
 
 func main(){
 	testingSet := uniqueSet{}
