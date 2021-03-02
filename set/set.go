@@ -59,6 +59,11 @@ func (S *uniqueSet) add (element string) bool {
 	return isBelong
 }
 
+/// length of set
+func (S *uniqueSet) len() int {
+	return len(S)
+}
+
 
 func main(){
 	testingSet := uniqueSet{}
