@@ -41,12 +41,12 @@ Contain counmmon methods implemented in those sets.
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
 | add | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
-| remove | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| intersect | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| remove | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
+| intersect | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
 | belong | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
-| difference | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| len| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| insert | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| difference | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
+| len| :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
+| insert | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
 | display | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
 
 # Table of time complexity - worst case
