@@ -61,20 +61,21 @@ func (S *uniqueSet) add (element string) bool {
 
 /// length of set
 func (S *uniqueSet) len() int {
-	return len(S)
+	return len(S.universe)
 }
 
 /// remove element in set if exists
 func (S *uniqueSet) remove(element string) bool {
 	rptaFlag := false
-	newUniverse []string
-	for _, value in range S.universe {
+	var newUniverse []string
+	for _, value := range S.universe {
 		if value == element {
 			rptaFlag = true
 		}else{
-			newUniverse.append(value)
+			append(newUniverse, element)
 		}
 	}
+	S.universe = newUniverse
 	return rptaFlag
 }
 
@@ -86,5 +87,11 @@ func main(){
 	testingSet.add("?")
 	testingSet.display()
 	testingSet.add("¿")
+	testingSet.add("¿")
+	testingSet.add("¿")
+	testingSet.add("¿")
+	testingSet.display()
+	fmt.Println(testingSet.len())
+	testingSet.remove("que")
 	testingSet.display()
 }
