@@ -4,7 +4,7 @@ Contain my implementation of several type of sets to learn golang.
 # available implementations 
 Those are types of sets will implement
 - [X] Unique elements in Set (set)
-- [ ] Non-unique elements in set (dst)
+- [X] Non-unique elements in set (dst)
 - [ ] Disjoint-union set (dus)
 
 # Methods
