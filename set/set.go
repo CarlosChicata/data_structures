@@ -72,7 +72,7 @@ func (S *uniqueSet) remove(element string) bool {
 		if value == element {
 			rptaFlag = true
 		}else{
-			append(newUniverse, element)
+			newUniverse = append(newUniverse, value)
 		}
 	}
 	S.universe = newUniverse
@@ -93,5 +93,9 @@ func main(){
 	testingSet.display()
 	fmt.Println(testingSet.len())
 	testingSet.remove("que")
+	testingSet.display()
+	testingSet.remove("que")
+	testingSet.display()
+	testingSet.remove("?")
 	testingSet.display()
 }
