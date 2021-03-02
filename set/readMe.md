@@ -55,12 +55,12 @@ Contain all time complexity of implementations
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
 | add        | O(n)  |  |  |
-| remove     |  |  |  |
-| intersect  |  |  |  |
+| remove     | O(n^2) |  |  |
+| intersect  | O(n^2) |  |  |
 | belong     | O(n) |  |  |
-| difference |  |  |  |
-| len        |  |  |  |
-| insert     |  |  |  |
+| difference | O(n^2) |  |  |
+| len        | O(1) |  |  |
+| insert     | O(1) |  |  |
 | display    | O(n) |  |  |
 
 ## version: 0.1.0
