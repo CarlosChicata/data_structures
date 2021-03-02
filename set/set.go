@@ -6,11 +6,11 @@ Version: 1.0
 
 Methods:
 	- add [x] : add element in set if not exists
-	- remove [ ] : remove element in set if exists
+	- remove [x] : remove element in set if exists
 	- intersec [ ] : all elements will intersect in two sets
 	- belong [x] : element belong this set
 	- difference [ ] : all elemnet will not interset in two sets
-	- len [ ] : count all elements of universe set
+	- len [x] : count all elements of universe set
 	- display [x] : display all element in universe set
 */
 
