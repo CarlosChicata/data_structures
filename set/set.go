@@ -91,6 +91,18 @@ func (S *uniqueSet) intersect (otherSet uniqueSet) uniqueSet {
 	return uniqueSet{ universe: rptaNewSet }
 }
 
+func (S *uniqueSet) difference (otherSet uniqueSet) uniqueSet {
+	var rptaNewSet []string
+
+	for _, value := range S.universe {
+		if !otherSet.belong(value) {
+			rptaNewSet = append(rptaNewSet, value)
+		}
+	}
+
+	return uniqueSet{ universe: rptaNewSet }
+}
+
 func main(){
 	testingSet := uniqueSet{}
 	testingSet.add("¿")
@@ -107,4 +119,6 @@ func main(){
 	var testingSet3 uniqueSet
 	testingSet3 = testingSet.intersect(testingSet2)
 	testingSet3.display()
+	testingSet4 := testingSet.difference(testingSet2)
+	testingSet4.display()
 }
