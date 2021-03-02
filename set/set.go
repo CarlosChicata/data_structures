@@ -7,7 +7,7 @@ Version: 1.0
 Methods:
 	- add [x] : add element in set if not exists
 	- remove [x] : remove element in set if exists
-	- intersect [ ] : all elements will intersect in two sets
+	- intersect [x] : all elements will intersect in two sets
 	- belong [x] : element belong this set
 	- difference [ ] : all elemnet will not interset in two sets
 	- len [x] : count all elements of universe set
@@ -79,6 +79,7 @@ func (S *uniqueSet) remove(element string) bool {
 	return rptaFlag
 }
 
+/// get new uniqueSet is intersection of two set
 func (S *uniqueSet) intersect (otherSet uniqueSet) uniqueSet {
 	var rptaNewSet []string
 	
