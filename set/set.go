@@ -9,7 +9,7 @@ Methods:
 	- remove [x] : remove element in set if exists
 	- intersect [x] : all elements will intersect in two sets
 	- belong [x] : element belong this set
-	- difference [ ] : all elemnet will not interset in two sets
+	- difference [x] : all elemnet will not interset in two sets
 	- len [x] : count all elements of universe set
 	- display [x] : display all element in universe set
 */
@@ -91,6 +91,7 @@ func (S *uniqueSet) intersect (otherSet uniqueSet) uniqueSet {
 	return uniqueSet{ universe: rptaNewSet }
 }
 
+/// get a uniqueSet with element belong host but not belong of guess
 func (S *uniqueSet) difference (otherSet uniqueSet) uniqueSet {
 	var rptaNewSet []string
 
