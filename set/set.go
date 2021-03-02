@@ -7,7 +7,7 @@ Version: 1.0
 Methods:
 	- add [x] : add element in set if not exists
 	- remove [x] : remove element in set if exists
-	- intersec [ ] : all elements will intersect in two sets
+	- intersect [ ] : all elements will intersect in two sets
 	- belong [x] : element belong this set
 	- difference [ ] : all elemnet will not interset in two sets
 	- len [x] : count all elements of universe set
@@ -79,23 +79,31 @@ func (S *uniqueSet) remove(element string) bool {
 	return rptaFlag
 }
 
+func (S *uniqueSet) intersect (otherSet uniqueSet) uniqueSet {
+	var rptaNewSet []string
+	
+	for _, value := range S.universe {
+		if otherSet.belong(value) {
+			rptaNewSet = append(rptaNewSet, value)
+		}
+	}
+	return uniqueSet{ universe: rptaNewSet }
+}
+
 func main(){
 	testingSet := uniqueSet{}
+	testingSet.add("¿")
 	testingSet.add("hola")
 	testingSet.add("que")
 	testingSet.add("tal")
 	testingSet.add("?")
 	testingSet.display()
-	testingSet.add("¿")
-	testingSet.add("¿")
-	testingSet.add("¿")
-	testingSet.add("¿")
-	testingSet.display()
-	fmt.Println(testingSet.len())
-	testingSet.remove("que")
-	testingSet.display()
-	testingSet.remove("que")
-	testingSet.display()
-	testingSet.remove("?")
-	testingSet.display()
+	testingSet2 := uniqueSet{}
+	testingSet2.add("que")
+	testingSet2.add("hace")
+	testingSet2.add("?")
+	testingSet2.display()
+	var testingSet3 uniqueSet
+	testingSet3 = testingSet.intersect(testingSet2)
+	testingSet3.display()
 }
