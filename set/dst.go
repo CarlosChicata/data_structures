@@ -56,6 +56,26 @@ func (S *duplicatedSet) len() int {
 	return len(S.universe)
 }
 
+/// remove element in set if exists
+func (S *duplicatedSet) remove(element string) bool {
+	rptaFlag := false
+	var newUniverse []string
+
+	for _, value := range S.universe {
+		if value == element && rptaFlag == false {
+			rptaFlag = true
+		}else if rptaFlag == false {
+			newUniverse = append(newUniverse, value)			
+		}else{
+			newUniverse = append(newUniverse, value)
+		}
+	}
+
+	S.universe = newUniverse
+	return rptaFlag
+}
+
+
 func main(){
 	testingSet := duplicatedSet{}
 	testingSet.add("¿")
@@ -63,5 +83,12 @@ func main(){
 	testingSet.add("que")
 	testingSet.add("tal")
 	testingSet.add("?")
+	testingSet.add("?")
+	testingSet.add("?")
+	testingSet.remove("?")
+	testingSet.remove("?")
+	testingSet.remove("?")
+	testingSet.remove("?")
+	testingSet.remove("?")
 	testingSet.display()
 }
