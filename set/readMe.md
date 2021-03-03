@@ -40,27 +40,26 @@ Contain counmmon methods implemented in those sets.
 
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
-| add | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
-| remove | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
-| intersect | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
-| belong | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
-| difference | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
-| len| :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
-| insert | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
-| display | :heavy_check_mark: | :white_check_mark: | :white_check_mark: |
+| add | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| remove | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| intersect | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| belong | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| difference | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| len| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| insert | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| display | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
 
 # Table of time complexity - worst case
 Contain all time complexity of implementations
 
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
-| add        | O(n)  |  |  |
-| remove     | O(n^2) |  |  |
-| intersect  | O(n^2) |  |  |
-| belong     | O(n) |  |  |
-| difference | O(n^2) |  |  |
-| len        | O(1) |  |  |
-| insert     | O(1) |  |  |
-| display    | O(n) |  |  |
+| add        | O(n)  | O(1) |  |
+| remove     | O(n) | O(n) |  |
+| intersect  | O(n^2) | O(n^2) |  |
+| belong     | O(n) | O(n) |  |
+| difference | O(n^2) | O(n^2) |  |
+| len        | O(1) | O(1) |  |
+| display    | O(n) | O(n) |  |
 
 ## version: 0.1.0
