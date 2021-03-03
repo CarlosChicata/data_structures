@@ -11,7 +11,7 @@ if the data structure can be apply the RUM theorem, then i will apply it.
 - [X] Set
 - [ ] Binary Tree
 - [ ] Red-black Tree
-- [ ] Union-disjoint set
+- [X] Union-disjoint set
 - [ ] B tree
 - [ ] B+ Tree
 
