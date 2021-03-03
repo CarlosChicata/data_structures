@@ -10,7 +10,7 @@ Methods:
 	- intersect [ ] : all elements will intersect in two sets
 	- belong [x] : element belong this set
 	- difference [ ] : all elemnet will not interset in two sets
-	- len [ ] : count all elements of universe set
+	- len [x] : count all elements of universe set
 	- display [x] : display all element in universe set
 */
 
@@ -51,6 +51,10 @@ func (S *duplicatedSet) add (element string) bool {
 	return true
 }
 
+/// length of set
+func (S *duplicatedSet) len() int {
+	return len(S.universe)
+}
 
 func main(){
 	testingSet := duplicatedSet{}
