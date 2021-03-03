@@ -75,6 +75,30 @@ func (S *duplicatedSet) remove(element string) bool {
 	return rptaFlag
 }
 
+/// get new uniqueSet is intersection of two set
+func (S *duplicatedSet) intersect (otherSet duplicatedSet) duplicatedSet {
+	var rptaNewSet []string
+	
+	for _, value := range S.universe {
+		if otherSet.belong(value) {
+			rptaNewSet = append(rptaNewSet, value)
+		}
+	}
+	return duplicatedSet{ universe: rptaNewSet }
+}
+
+/// get a uniqueSet with element belong host but not belong of guess
+func (S *duplicatedSet) difference (otherSet duplicatedSet) duplicatedSet {
+	var rptaNewSet []string
+
+	for _, value := range S.universe {
+		if !otherSet.belong(value) {
+			rptaNewSet = append(rptaNewSet, value)
+		}
+	}
+
+	return duplicatedSet{ universe: rptaNewSet }
+}
 
 func main(){
 	testingSet := duplicatedSet{}
@@ -85,10 +109,14 @@ func main(){
 	testingSet.add("?")
 	testingSet.add("?")
 	testingSet.add("?")
-	testingSet.remove("?")
-	testingSet.remove("?")
-	testingSet.remove("?")
-	testingSet.remove("?")
-	testingSet.remove("?")
 	testingSet.display()
+	testingSet2 := duplicatedSet{}
+	testingSet2.add("?")
+	testingSet2.add("hola")
+	testingSet2.add("gaaaaaaaaa")
+	testingSet2.display()
+	testingSet3 := testingSet.intersect(testingSet2)
+	testingSet3.display()
+	testingSet4 := testingSet.difference(testingSet2)
+	testingSet4.display()
 }
