@@ -5,7 +5,7 @@ Contain my implementation of several type of sets to learn golang.
 Those are types of sets will implement
 - [X] Unique elements in Set (set)
 - [X] Non-unique elements in set (dst)
-- [ ] Disjoint-union set (dus)
+- [X] Disjoint-union set (dus)
 
 # Methods
 All lists contain those methods in common.
@@ -44,12 +44,12 @@ Contain counmmon methods implemented in those sets.
 
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
-| add | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| add | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | remove | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | intersect | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | belong | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
 | difference | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| len| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| len| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | insert | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | display | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
 | union | :x: | :x: | :white_check_mark: |
@@ -62,12 +62,12 @@ Contain all time complexity of implementations
 
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
-| add        | O(n)  | O(1) |  |
+| add        | O(n)  | O(1) | O(1) |
 | remove     | O(n) | O(n) | - |
 | intersect  | O(n^2) | O(n^2) | - |
 | belong     | O(n) | O(n) |  |
 | difference | O(n^2) | O(n^2) | - |
-| len        | O(1) | O(1) |  |
+| len        | O(1) | O(1) | O(1) |
 | display    | O(n) | O(n) |  |
 | union      | - | - |  |
 | sizeIn     | - | - |  |
