@@ -21,9 +21,21 @@ import "fmt"
 
 
 type DisjointUnion struct {
-	universe [string]string
+	universe map[string]string
+}
+
+
+func (D *DisjointUnion) len () int {
+	return len(D.universe)
 }
 
 func main(){
-
+	testingDUS := DisjointUnion{}
+	testingDUS.add("hola")
+	testingDUS.add("que")
+	testingDUS.add("tal")
+	testingDUS.add("?")
+	testingDUS.add("?")
+	testingDUS.add("?")
+	fmt.Println(testingDUS.len());
 }
