@@ -5,9 +5,9 @@ Purpose:
 Version: 1.0
 
 Methods:
-	- add [ ] : add element in universe if not exists
+	- add [x] : add element in universe if not exists
 	- belong [ ] : element belong this universe
-	- len [ ] : count all elements of universe set
+	- len [x] : count all elements of universe set
 	- display [ ] : display all element in universe set
 	- union [ ] : merge two set
 	- parentIn [ ] : get parent of set
