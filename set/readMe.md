@@ -44,18 +44,18 @@ Contain counmmon methods implemented in those sets.
 
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
-| add | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
-| remove | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
-| intersect | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
+| add | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| remove | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| intersect | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | belong | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
-| difference | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
+| difference | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | len| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
-| insert | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
+| insert | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | display | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
-| union | :cross_mark: | :cross_mark: | :white_check_mark: |
-| sizeIn | :cross_mark: | :cross_mark: | :white_check_mark: |
-| sizeSet | :cross_mark: | :cross_mark: | :white_check_mark: |
-| parentIn | :cross_mark: | :cross_mark: | :white_check_mark: |
+| union | :x: | :x: | :white_check_mark: |
+| sizeIn | :x: | :x: | :white_check_mark: |
+| sizeSet | :x: | :x: | :white_check_mark: |
+| parentIn | :x: | :x: | :white_check_mark: |
 
 # Table of time complexity - worst case
 Contain all time complexity of implementations
