@@ -18,8 +18,12 @@ All lists contain those methods in common.
 - **len**: count all elements of universe set.
 - **display**: display all elements in set.
 
-But disjoint-union version, i need to add some methods.
+But disjoint-union data structure, i need to others methods.
 
+- **add**: add element in set if not exists.
+- **belong**: element belong this set.
+- **len**: count all elements of universe set.
+- **display**: display all elements in set.
 - **union**: merge two set
 - **unionIn**: merge element into set
 - **parentIn**: get parent of set
@@ -40,14 +44,18 @@ Contain counmmon methods implemented in those sets.
 
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
-| add | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
-| remove | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
-| intersect | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| add | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
+| remove | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
+| intersect | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
 | belong | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
-| difference | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| difference | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
 | len| :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
-| insert | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| insert | :heavy_check_mark: | :heavy_check_mark: | :cross_mark: |
 | display | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| union | :cross_mark: | :cross_mark: | :white_check_mark: |
+| sizeIn | :cross_mark: | :cross_mark: | :white_check_mark: |
+| sizeSet | :cross_mark: | :cross_mark: | :white_check_mark: |
+| parentIn | :cross_mark: | :cross_mark: | :white_check_mark: |
 
 # Table of time complexity - worst case
 Contain all time complexity of implementations
@@ -55,11 +63,15 @@ Contain all time complexity of implementations
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
 | add        | O(n)  | O(1) |  |
-| remove     | O(n) | O(n) |  |
-| intersect  | O(n^2) | O(n^2) |  |
+| remove     | O(n) | O(n) | - |
+| intersect  | O(n^2) | O(n^2) | - |
 | belong     | O(n) | O(n) |  |
-| difference | O(n^2) | O(n^2) |  |
+| difference | O(n^2) | O(n^2) | - |
 | len        | O(1) | O(1) |  |
 | display    | O(n) | O(n) |  |
+| union      | - | - |  |
+| sizeIn     | - | - |  |
+| sizeSet    | - | - |  |
+| parentIn   | - | - |  |
 
 ## version: 0.1.0
