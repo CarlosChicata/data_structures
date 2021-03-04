@@ -13,6 +13,9 @@ Methods:
 	- parentIn [ ] : get parent of set
 	- sizeIn [ ] : get size of set
 	- sizeSet [ ] : get number of set in universe.
+
+Internal Methods:
+	- preparing [x]: preparing map fields in Disjoint Union
 */
 
 package main
@@ -24,6 +27,22 @@ type DisjointUnion struct {
 	universe map[string]string
 }
 
+func (D *DisjointUnion) preparing () {
+	D.universe = make(map[string]string)
+}
+
+func (D *DisjointUnion) add (value string) bool {
+	var rptaFlag bool
+
+	if _, ok := D.universe[value]; ok {
+		rptaFlag = true
+	}else{
+		D.universe[value] = value
+		rptaFlag = true
+	}
+
+	return rptaFlag
+}
 
 func (D *DisjointUnion) len () int {
 	return len(D.universe)
@@ -31,6 +50,7 @@ func (D *DisjointUnion) len () int {
 
 func main(){
 	testingDUS := DisjointUnion{}
+	testingDUS.preparing()
 	testingDUS.add("hola")
 	testingDUS.add("que")
 	testingDUS.add("tal")
