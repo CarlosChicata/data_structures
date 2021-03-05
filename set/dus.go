@@ -48,6 +48,14 @@ func (D *DisjointUnion) len () int {
 	return len(D.universe)
 }
 
+func (D *DisjointUnion) belong (value string) bool {
+	rptaFlag := false
+	if _, ok := D.universe[value]; ok {
+		rptaFlag = true
+	}
+	return rptaFlag
+}
+
 func main(){
 	testingDUS := DisjointUnion{}
 	testingDUS.preparing()
