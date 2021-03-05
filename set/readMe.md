@@ -47,7 +47,7 @@ Contain counmmon methods implemented in those sets.
 | add | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | remove | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | intersect | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| belong | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| belong | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | difference | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | len| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | insert | :heavy_check_mark: | :heavy_check_mark: | :x: |
@@ -65,7 +65,7 @@ Contain all time complexity of implementations
 | add        | O(n)  | O(1) | O(1) |
 | remove     | O(n) | O(n) | - |
 | intersect  | O(n^2) | O(n^2) | - |
-| belong     | O(n) | O(n) |  |
+| belong     | O(n) | O(n) | O(1) |
 | difference | O(n^2) | O(n^2) | - |
 | len        | O(1) | O(1) | O(1) |
 | display    | O(n) | O(n) |  |
