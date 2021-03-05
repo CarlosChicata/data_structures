@@ -10,7 +10,7 @@ Methods:
 	- len [x] : count all elements of universe set
 	- display [ ] : display all element in universe set
 	- union [ ] : merge two set
-	- parentIn [ ] : get parent of set
+	- parentIn [x] : get parent of set
 	- sizeIn [ ] : get size of set
 	- sizeSet [ ] : get number of set in universe.
 
@@ -60,6 +60,7 @@ func (D *DisjointUnion) belong (value string) bool {
 	return rptaFlag
 }
 
+/// find parent of value
 func (D *DisjointUnion) parentIn (value string) (string, bool) {
 	if D.belong(value) == false {
 		return value, false
@@ -75,6 +76,7 @@ func (D *DisjointUnion) parentIn (value string) (string, bool) {
 
 	return valueMap, true
 }
+
 
 func main(){
 	testingDUS := DisjointUnion{}
