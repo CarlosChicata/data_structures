@@ -6,7 +6,7 @@ Version: 1.0
 
 Methods:
 	- add [x] : add element in universe if not exists
-	- belong [ ] : element belong this universe
+	- belong [x] : element belong this universe
 	- len [x] : count all elements of universe set
 	- display [ ] : display all element in universe set
 	- union [ ] : merge two set
@@ -27,10 +27,12 @@ type DisjointUnion struct {
 	universe map[string]string
 }
 
+/// preparing maps of disjoint-union set
 func (D *DisjointUnion) preparing () {
 	D.universe = make(map[string]string)
 }
 
+/// add value of disjoint-union set if it is not exists
 func (D *DisjointUnion) add (value string) bool {
 	var rptaFlag bool
 
@@ -44,10 +46,12 @@ func (D *DisjointUnion) add (value string) bool {
 	return rptaFlag
 }
 
+/// length of disjoint-union set
 func (D *DisjointUnion) len () int {
 	return len(D.universe)
 }
 
+/// if value belong this disjoint-union set
 func (D *DisjointUnion) belong (value string) bool {
 	rptaFlag := false
 	if _, ok := D.universe[value]; ok {
