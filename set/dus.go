@@ -60,6 +60,22 @@ func (D *DisjointUnion) belong (value string) bool {
 	return rptaFlag
 }
 
+func (D *DisjointUnion) parentIn (value string) (string, bool) {
+	if D.belong(value) == false {
+		return value, false
+	}
+	
+	valueMap := D.universe[value]
+	
+	for value != valueMap {
+		value = D.universe[value]
+		valueMap = D.universe[valueMap]
+		fmt.Println(value, valueMap)
+	}
+
+	return valueMap, true
+}
+
 func main(){
 	testingDUS := DisjointUnion{}
 	testingDUS.preparing()
@@ -70,4 +86,5 @@ func main(){
 	testingDUS.add("?")
 	testingDUS.add("?")
 	fmt.Println(testingDUS.len());
+	fmt.Println(testingDUS.parentIn("hola"))
 }
