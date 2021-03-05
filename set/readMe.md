@@ -55,7 +55,7 @@ Contain counmmon methods implemented in those sets.
 | union | :x: | :x: | :white_check_mark: |
 | sizeIn | :x: | :x: | :white_check_mark: |
 | sizeSet | :x: | :x: | :white_check_mark: |
-| parentIn | :x: | :x: | :white_check_mark: |
+| parentIn | :x: | :x: | :heavy_check_mark: |
 
 # Table of time complexity - worst case
 Contain all time complexity of implementations
@@ -72,6 +72,6 @@ Contain all time complexity of implementations
 | union      | - | - |  |
 | sizeIn     | - | - |  |
 | sizeSet    | - | - |  |
-| parentIn   | - | - |  |
+| parentIn   | - | - | O(n) |
 
 ## version: 0.1.0
