@@ -13,8 +13,8 @@ Methods:
 		- unionBySize [ ] : merge using size
 		- unionByRank [ ] : merge using rank
 	- parentIn [x] : get parent of set
-	- sizeIn [ ] : get size of set
-	- sizeSet [ ] : get number of set in universe.
+	- sizeSet [ ] : get size of set by specified element 
+	- sizeIn [x] : get number of set in universe.
 
 Internal Methods:
 	- preparing [x]: preparing map fields in Disjoint Union
