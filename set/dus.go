@@ -82,6 +82,13 @@ func (D *DisjointUnion) parentIn (value string) (string, bool) {
 	return valueMap, true
 }
 
+func (D *DisjointUnion) sizeSet(value string) int {
+	if D.belong(value) {
+		return D.size_sets[value]
+	} else { 
+		return 0
+	}
+}
 
 func main(){
 	testingDUS := DisjointUnion{}
@@ -94,4 +101,5 @@ func main(){
 	testingDUS.add("?")
 	fmt.Println(testingDUS.len());
 	fmt.Println(testingDUS.parentIn("hola"))
+	fmt.Println(testingDUS.sizeSet("hola"))
 }
