@@ -82,9 +82,11 @@ func (D *DisjointUnion) parentIn (value string) (string, bool) {
 	return valueMap, true
 }
 
+/// size of subset with element size
 func (D *DisjointUnion) sizeSet(value string) int {
 	if D.belong(value) {
-		return D.size_sets[value]
+		parentValue, _ := D.parentIn(value)
+		return D.size_sets[parentValue]
 	} else { 
 		return 0
 	}
