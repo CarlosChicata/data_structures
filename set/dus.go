@@ -9,7 +9,9 @@ Methods:
 	- belong [x] : element belong this universe
 	- len [x] : count all elements of universe set
 	- display [ ] : display all element in universe set
-	- union [ ] : merge two set
+	- union [ ] : merge two set: they are two variants:
+		- unionBySize [ ] : merge using size
+		- unionByRank [ ] : merge using rank
 	- parentIn [x] : get parent of set
 	- sizeIn [ ] : get size of set
 	- sizeSet [ ] : get number of set in universe.
@@ -25,11 +27,13 @@ import "fmt"
 
 type DisjointUnion struct {
 	universe map[string]string
+	size_sets map[string]int
 }
 
 /// preparing maps of disjoint-union set
 func (D *DisjointUnion) preparing () {
 	D.universe = make(map[string]string)
+	D.size_sets = make(map[string]int)
 }
 
 /// add value of disjoint-union set if it is not exists
@@ -40,6 +44,7 @@ func (D *DisjointUnion) add (value string) bool {
 		rptaFlag = true
 	}else{
 		D.universe[value] = value
+		D.size_sets[value] = 1
 		rptaFlag = true
 	}
 
