@@ -32,8 +32,8 @@ But disjoint-union data structure, i need to others methods.
 # Optimization of Disjoint-union set
 I can implement several methods to optimize this data structure:
 
-- [ ] union by size: use the parent by set with more member.
-- [ ] union by rank: use the parent by set with more depth.
+- [x] union by size: use the parent with more member.
+- [ ] union by rank: use the parent with more depth.
 - [ ] path compression: when insert element in set, directly point to parent.
 - [ ] path halving: ??
 - [ ] path splitting: ?? 
