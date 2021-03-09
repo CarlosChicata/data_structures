@@ -10,7 +10,7 @@ Methods:
 	- len [x] : count all elements of universe set
 	- display [ ] : display all element in universe set
 	- union [ ] : merge two set: they are two variants:
-		- unionBySize [ ] : merge using size
+		- unionBySize [x] : merge using size
 		- unionByRank [ ] : merge using rank
 	- parentIn [x] : get parent of set
 	- sizeSet [ ] : get size of set by specified element 
@@ -91,6 +91,7 @@ func (D *DisjointUnion) sizeSet(value string) int {
 	}
 }
 
+/// union set using size by criterio
 func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
 	maxValue, isValid1 := D.parentIn(value1)
 	minValue, isValid2 := D.parentIn(value2)
