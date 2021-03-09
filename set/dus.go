@@ -76,7 +76,6 @@ func (D *DisjointUnion) parentIn (value string) (string, bool) {
 	for value != valueMap {
 		value = D.universe[value]
 		valueMap = D.universe[valueMap]
-		fmt.Println(value, valueMap)
 	}
 
 	return valueMap, true
@@ -92,6 +91,24 @@ func (D *DisjointUnion) sizeSet(value string) int {
 	}
 }
 
+func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
+	maxValue, isValid1 := D.parentIn(value1)
+	minValue, isValid2 := D.parentIn(value2)
+
+	if isValid1 == false || isValid2 == false {
+		return -1
+	}
+
+	if D.size_sets[maxValue] < D.size_sets[maxValue] {
+		maxValue, minValue = minValue, maxValue
+	}
+
+	D.universe[minValue] = D.universe[maxValue]
+	D.size_sets[maxValue] = D.size_sets[maxValue] + D.size_sets[minValue]
+	return D.size_sets[maxValue]
+}
+
+
 func main(){
 	testingDUS := DisjointUnion{}
 	testingDUS.preparing()
@@ -101,7 +118,10 @@ func main(){
 	testingDUS.add("?")
 	testingDUS.add("?")
 	testingDUS.add("?")
-	fmt.Println(testingDUS.len());
+	fmt.Println(testingDUS.unionBySize("hola", "que"))
 	fmt.Println(testingDUS.parentIn("hola"))
 	fmt.Println(testingDUS.sizeSet("hola"))
+	fmt.Println(testingDUS.parentIn("que"))
+	fmt.Println(testingDUS.sizeSet("que"))
+	fmt.Println(testingDUS.parentIn("tal"))
 }
