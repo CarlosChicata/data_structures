@@ -99,7 +99,14 @@ func (D *DisjointUnion) sizeSet(value string) int {
 	}
 }
 
+func (D *DisjointUnion) union(value1 string, value2 string) bool {
+	if D.belong(value1) == false || D.belong(value2) == false {
+		return false
+	}
 
+	D.universe[value2] = value1 
+	return true;
+}
 
 /// union set using size by criterio
 func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
@@ -130,10 +137,8 @@ func (D *DisjointUnion) parentInByCompress(value string) (string, bool, int) {
 		D.universe[ancester] = parentValue
 	}
 
-	return value, true, 
+	return value, true, len(path)
 }
-
-
 
 func main(){
 	testingDUS := DisjointUnion{}
@@ -144,5 +149,9 @@ func main(){
 	testingDUS.add("?")
 	testingDUS.add("?")
 	testingDUS.add("?")
-	fmt.Println(testingDUS.unionBySize("hola", "que"))
+	fmt.Println(testingDUS.union("hola", "que"))
+	fmt.Println(testingDUS.union("que", "?"))
+	fmt.Println(testingDUS.parentIn("?"))
+	testingDUS.parentInByCompress("?")
+	fmt.Println(testingDUS.parentIn("?"))
 }
