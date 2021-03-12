@@ -32,7 +32,7 @@ But disjoint-union data structure, i need to others methods.
 I can implement several methods to optimize this data structure:
 
 - [x] union by size: use the parent with more member.
-- [ ] union by rank: use the parent with more depth.
+- [x] union by rank: use the parent with more depth.
 - [x] path compression: when insert element in set, directly point to parent.
 - [ ] path halving: ??
 - [ ] path splitting: ?? 
