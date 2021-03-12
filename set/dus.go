@@ -129,6 +129,26 @@ func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
 	return D.size_sets[maxValue]
 }
 
+/// merge 2 sets using union by rank
+func (D *DisjointUnion) unionByRank(value1 string, value2 string) int {
+	maxValue, isValid1, _ := D.parentIn(value1)
+	minValue, isValid2, _ := D.parentIn(value2)
+
+	if isValid1 == false || isValid2 == false {
+		return -1
+	}
+
+	if D.rank_sets[maxValue] < D.rank_sets[minValue] {
+		maxValue, minValue = minValue, maxValue
+	}
+
+	D.universe[minValue] = D.universe[maxValue]
+	if D.rank_sets[maxValue] == D.rank_sets[minValue] {
+		D.rank_sets[maxValue] = D.rank_sets[maxValue] + 1
+	}
+	return D.rank_sets[maxValue]
+}
+
 
 /// find parent of value and apply path compression
 func (D *DisjointUnion) parentInByCompress(value string) (string, bool, int) {
@@ -152,11 +172,12 @@ func main(){
 	testingDUS.add("que")
 	testingDUS.add("tal")
 	testingDUS.add("?")
-	testingDUS.add("?")
-	testingDUS.add("?")
-	fmt.Println(testingDUS.union("hola", "que"))
-	fmt.Println(testingDUS.union("que", "?"))
-	fmt.Println(testingDUS.parentIn("?"))
-	testingDUS.parentInByCompress("?")
-	fmt.Println(testingDUS.parentIn("?"))
+	testingDUS.add("_")
+	testingDUS.add("b")
+	fmt.Println(testingDUS.unionByRank("hola", "que"))
+	fmt.Println(testingDUS.unionByRank("_", "?"))
+	fmt.Println(testingDUS.parentIn("que"))
+	fmt.Println(testingDUS.unionByRank("que", "?"))
+	fmt.Println(testingDUS.parentIn("que"))
+	fmt.Println(testingDUS.universe)
 }
