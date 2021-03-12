@@ -99,13 +99,14 @@ func (D *DisjointUnion) sizeSet(value string) int {
 	}
 }
 
-func (D *DisjointUnion) union(value1 string, value2 string) bool {
+func (D *DisjointUnion) union(value1 string, value2 string) int {
 	if D.belong(value1) == false || D.belong(value2) == false {
-		return false
+		return -1
 	}
 
-	D.universe[value2] = value1 
-	return true;
+	D.universe[value2] = value1
+	D.size_sets[value2] = D.size_sets[value2] + D.size_sets[value1]
+	return D.size_sets[value2];
 }
 
 /// union set using size by criterio
