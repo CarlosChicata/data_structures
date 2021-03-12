@@ -25,7 +25,6 @@ But disjoint-union data structure, i need to others methods.
 - **len**: count all elements of universe set.
 - **display**: display all elements in set.
 - **union**: merge two set
-- **unionIn**: merge element into set
 - **parentIn**: get parent of set
 - **sizeIn**: get element inside set
 
@@ -34,9 +33,10 @@ I can implement several methods to optimize this data structure:
 
 - [x] union by size: use the parent with more member.
 - [ ] union by rank: use the parent with more depth.
-- [ ] path compression: when insert element in set, directly point to parent.
+- [x] path compression: when insert element in set, directly point to parent.
 - [ ] path halving: ??
 - [ ] path splitting: ?? 
+
 
 
 # Table of implemented methods
@@ -52,9 +52,9 @@ Contain counmmon methods implemented in those sets.
 | len| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | insert | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | display | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
-| union | :x: | :x: | :white_check_mark: |
-| sizeIn | :x: | :x: | :white_check_mark: |
-| sizeSet | :x: | :x: | :white_check_mark: |
+| union | :x: | :x: | :heavy_check_mark: |
+| sizeIn | :x: | :x: | :heavy_check_mark: |
+| sizeSet | :x: | :x: | :heavy_check_mark: |
 | parentIn | :x: | :x: | :heavy_check_mark: |
 
 # Table of time complexity - worst case
@@ -69,9 +69,9 @@ Contain all time complexity of implementations
 | difference | O(n^2) | O(n^2) | - |
 | len        | O(1) | O(1) | O(1) |
 | display    | O(n) | O(n) |  |
-| union      | - | - |  |
+| union      | - | - | O(1) |
 | sizeIn     | - | - |  |
-| sizeSet    | - | - |  |
+| sizeSet    | - | - | O(1) |
 | parentIn   | - | - | O(n) |
 
 ## version: 0.1.0
