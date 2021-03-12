@@ -99,6 +99,7 @@ func (D *DisjointUnion) sizeSet(value string) int {
 	}
 }
 
+/// merge 2 sets using normal operation
 func (D *DisjointUnion) union(value1 string, value2 string) int {
 	if D.belong(value1) == false || D.belong(value2) == false {
 		return -1
@@ -109,7 +110,7 @@ func (D *DisjointUnion) union(value1 string, value2 string) int {
 	return D.size_sets[value2];
 }
 
-/// union set using size by criterio
+/// merge 2 sets using union by size
 func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
 	maxValue, isValid1, _ := D.parentIn(value1)
 	minValue, isValid2, _ := D.parentIn(value2)
@@ -127,6 +128,7 @@ func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
 	return D.size_sets[maxValue]
 }
 
+/// find parent of value and apply path compression
 func (D *DisjointUnion) parentInByCompress(value string) (string, bool, int) {
 	parentValue, flag, path := D.parentIn(value)
 	
