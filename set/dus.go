@@ -9,11 +9,11 @@ Methods:
 	- belong [x] : element belong this universe
 	- len [x] : count all elements of universe set
 	- display [ ] : display all element in universe set
-	- union [ ] : merge two set: they are two variants:
+	- union [x] : merge two set: they are two variants:
 		- unionBySize [x] : merge using size
 		- unionByRank [ ] : merge using rank
 	- parentIn [X] : get parent of set. this is normal version but contain variants:
-		- parentInByCompress [ ] : apply path compression.
+		- parentInByCompress [x] : apply path compression.
 		- parentInByHalving [ ]: apply path halving.
 		- parentInBySplitting [ ] : apply path splitting.
 	- sizeSet [ ] : get size of set by specified element 
@@ -98,6 +98,8 @@ func (D *DisjointUnion) sizeSet(value string) int {
 		return 0
 	}
 }
+
+
 
 /// union set using size by criterio
 func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
