@@ -120,7 +120,7 @@ func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
 		return -1
 	}
 
-	if D.size_sets[maxValue] < D.size_sets[maxValue] {
+	if D.size_sets[maxValue] < D.size_sets[minValue] {
 		maxValue, minValue = minValue, maxValue
 	}
 
@@ -128,6 +128,7 @@ func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
 	D.size_sets[maxValue] = D.size_sets[maxValue] + D.size_sets[minValue]
 	return D.size_sets[maxValue]
 }
+
 
 /// find parent of value and apply path compression
 func (D *DisjointUnion) parentInByCompress(value string) (string, bool, int) {
