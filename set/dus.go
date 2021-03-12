@@ -12,7 +12,10 @@ Methods:
 	- union [ ] : merge two set: they are two variants:
 		- unionBySize [x] : merge using size
 		- unionByRank [ ] : merge using rank
-	- parentIn [x] : get parent of set
+	- parentIn [X] : get parent of set. this is normal version but contain variants:
+		- parentInByCompress [ ] : apply path compression.
+		- parentInByHalving [ ]: apply path halving.
+		- parentInBySplitting [ ] : apply path splitting.
 	- sizeSet [ ] : get size of set by specified element 
 	- sizeIn [x] : get number of set in universe.
 
@@ -68,25 +71,28 @@ func (D *DisjointUnion) belong (value string) bool {
 }
 
 /// find parent of value
-func (D *DisjointUnion) parentIn (value string) (string, bool) {
+func (D *DisjointUnion) parentIn (value string) (string, bool, []string) {
+	var genealogyTree []string
+
 	if D.belong(value) == false {
-		return value, false
+		return value, false, genealogyTree
 	}
 	
 	valueMap := D.universe[value]
 	
 	for value != valueMap {
+		genealogyTree = append(genealogyTree, value)
 		value = D.universe[value]
 		valueMap = D.universe[valueMap]
 	}
 
-	return valueMap, true
+	return valueMap, true, genealogyTree
 }
 
 /// size of subset with element size
 func (D *DisjointUnion) sizeSet(value string) int {
 	if D.belong(value) {
-		parentValue, _ := D.parentIn(value)
+		parentValue, _, _ := D.parentIn(value)
 		return D.size_sets[parentValue]
 	} else { 
 		return 0
@@ -95,8 +101,8 @@ func (D *DisjointUnion) sizeSet(value string) int {
 
 /// union set using size by criterio
 func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
-	maxValue, isValid1 := D.parentIn(value1)
-	minValue, isValid2 := D.parentIn(value2)
+	maxValue, isValid1, _ := D.parentIn(value1)
+	minValue, isValid2, _ := D.parentIn(value2)
 
 	if isValid1 == false || isValid2 == false {
 		return -1
@@ -111,7 +117,6 @@ func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
 	return D.size_sets[maxValue]
 }
 
-
 func main(){
 	testingDUS := DisjointUnion{}
 	testingDUS.preparing()
@@ -122,9 +127,4 @@ func main(){
 	testingDUS.add("?")
 	testingDUS.add("?")
 	fmt.Println(testingDUS.unionBySize("hola", "que"))
-	fmt.Println(testingDUS.parentIn("hola"))
-	fmt.Println(testingDUS.sizeSet("hola"))
-	fmt.Println(testingDUS.parentIn("que"))
-	fmt.Println(testingDUS.sizeSet("que"))
-	fmt.Println(testingDUS.parentIn("tal"))
 }
