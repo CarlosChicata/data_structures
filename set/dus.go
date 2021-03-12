@@ -17,7 +17,7 @@ Methods:
 		- parentInByHalving [ ]: apply path halving.
 		- parentInBySplitting [ ] : apply path splitting.
 	- sizeSet [x] : get size of set by specified element 
-	- sizeIn [x] : get number of set in universe.
+	- sizeIn [ ] : get number of set in universe.
 
 Internal Methods:
 	- preparing [x]: preparing map fields in Disjoint Union
