@@ -50,6 +50,7 @@ func (D *DisjointUnion) add (value string) bool {
 	}else{
 		D.universe[value] = value
 		D.size_sets[value] = 1
+		D.rank_sets[value] = 1
 		rptaFlag = true
 	}
 
