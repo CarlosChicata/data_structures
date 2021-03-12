@@ -28,12 +28,14 @@ import "fmt"
 type DisjointUnion struct {
 	universe map[string]string
 	size_sets map[string]int
+	rank_sets map[string] int
 }
 
 /// preparing maps of disjoint-union set
 func (D *DisjointUnion) preparing () {
 	D.universe = make(map[string]string)
 	D.size_sets = make(map[string]int)
+	D.rank_sets = make(map[string]int)
 }
 
 /// add value of disjoint-union set if it is not exists
