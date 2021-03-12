@@ -117,6 +117,22 @@ func (D *DisjointUnion) unionBySize(value1 string, value2 string) int {
 	return D.size_sets[maxValue]
 }
 
+func (D *DisjointUnion) parentInByCompress(value string) (string, bool, int) {
+	parentValue, flag, path := D.parentIn(value)
+	
+	if flag == false {
+		return value, false, 0
+	}
+
+	for _, ancester := range path {
+		D.universe[ancester] = parentValue
+	}
+
+	return value, true, 
+}
+
+
+
 func main(){
 	testingDUS := DisjointUnion{}
 	testingDUS.preparing()
