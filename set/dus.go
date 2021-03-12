@@ -11,7 +11,7 @@ Methods:
 	- display [ ] : display all element in universe set
 	- union [x] : merge two set: they are two variants:
 		- unionBySize [x] : merge using size
-		- unionByRank [ ] : merge using rank
+		- unionByRank [x] : merge using rank
 	- parentIn [X] : get parent of set. this is normal version but contain variants:
 		- parentInByCompress [x] : apply path compression.
 		- parentInByHalving [ ]: apply path halving.
