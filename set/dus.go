@@ -16,7 +16,7 @@ Methods:
 		- parentInByCompress [x] : apply path compression.
 		- parentInByHalving [ ]: apply path halving.
 		- parentInBySplitting [ ] : apply path splitting.
-	- sizeSet [ ] : get size of set by specified element 
+	- sizeSet [x] : get size of set by specified element 
 	- sizeIn [x] : get number of set in universe.
 
 Internal Methods:
