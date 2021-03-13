@@ -173,6 +173,22 @@ func (D *DisjointUnion) parentInBySplitting(value string) (string, bool, int) {
 	return value, true, lengthPath
 }
 
+func (D *DisjointUnion) parentInByHalving(value string) (string, bool, int) {
+	if D.belong(value) == false {
+		return value, false, 0
+	}
+
+	lengthPath := 0
+
+	for D.universe[value] != value {
+		lengthPath++
+		D.universe[value] = D.universe[D.universe[value]]
+		value = D.universe[value]
+	}
+
+	return value, true, lengthPath
+}
+
 /// find parent of value and apply path compression
 func (D *DisjointUnion) parentInByCompress(value string) (string, bool, int) {
 	parentValue, flag, path := D.parentIn(value)
@@ -200,7 +216,7 @@ func main(){
 	fmt.Println(testingDUS.unionByRank("hola", "que"))
 	fmt.Println(testingDUS.unionByRank("_", "?"))
 	fmt.Println(testingDUS.unionByRank("que", "?"))
-	fmt.Println(testingDUS.parentInBySplitting("?"))
+	fmt.Println(testingDUS.parentInByHalving("?"))
 	fmt.Println(testingDUS.universe)
 	fmt.Println(testingDUS.parentIn("que"))
 }
