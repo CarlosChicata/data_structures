@@ -34,8 +34,8 @@ I can implement several methods to optimize this data structure:
 - [x] union by size: use the parent with more member.
 - [x] union by rank: use the parent with more depth.
 - [x] path compression: when insert element in set, directly point to parent.
-- [ ] path halving: ??
-- [ ] path splitting: ?? 
+- [x] path splitting: set parent of element in path its grandparent.
+- [x] path halving: same as path splitting that it's done for every element node
 
 
 
@@ -51,7 +51,7 @@ Contain counmmon methods implemented in those sets.
 | difference | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | len| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | insert | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| display | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: |
+| display | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | union | :x: | :x: | :heavy_check_mark: |
 | sizeIn | :x: | :x: | :heavy_check_mark: |
 | sizeSet | :x: | :x: | :heavy_check_mark: |
@@ -68,10 +68,10 @@ Contain all time complexity of implementations
 | belong     | O(n) | O(n) | O(1) |
 | difference | O(n^2) | O(n^2) | - |
 | len        | O(1) | O(1) | O(1) |
-| display    | O(n) | O(n) |  |
+| display    | O(n) | O(n) | O(n) |
 | union      | - | - | O(1) |
-| sizeIn     | - | - |  |
+| sizeIn     | - | - | O(1) |
 | sizeSet    | - | - | O(1) |
 | parentIn   | - | - | O(n) |
 
-## version: 0.1.0
+## version: 1.0.0
