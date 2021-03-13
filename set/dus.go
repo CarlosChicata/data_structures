@@ -208,6 +208,15 @@ func (D *DisjointUnion) sizeIn() int {
 	return len(D.universe)	
 }
 
+func (D *DisjointUnion) display () {
+	var msg string
+
+	for value, parent := range D.universe {
+		msg = fmt.Sprintf("value: %s, and my parent is: %s", value, parent)
+		fmt.Println(msg)
+	}
+}
+
 func main(){
 	testingDUS := DisjointUnion{}
 	testingDUS.preparing()
@@ -223,4 +232,5 @@ func main(){
 	fmt.Println(testingDUS.parentInByHalving("?"))
 	fmt.Println(testingDUS.universe)
 	fmt.Println(testingDUS.parentIn("que"))
+	testingDUS.display()
 }
