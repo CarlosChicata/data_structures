@@ -15,7 +15,7 @@ Methods:
 	- parentIn [X] : get parent of set. this is normal version but contain variants:
 		- parentInByCompress [x] : apply path compression.
 		- parentInByHalving [ ]: apply path halving.
-		- parentInBySplitting [ ] : apply path splitting.
+		- parentInBySplitting [x] : apply path splitting.
 	- sizeSet [x] : get size of set by specified element 
 	- sizeIn [ ] : get number of set in universe.
 
@@ -153,6 +153,7 @@ func (D *DisjointUnion) unionByRank(value1 string, value2 string) int {
 	return D.rank_sets[maxValue]
 }
 
+/// find parent of value and apply path splitting
 func (D *DisjointUnion) parentInBySplitting(value string) (string, bool, int) {
 
 	if D.belong(value) == false {
