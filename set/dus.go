@@ -21,6 +21,10 @@ Methods:
 
 Internal Methods:
 	- preparing [x]: preparing map fields in Disjoint Union
+
+REFERENCE:
+	New and interesting material will use to implement:
+		- https://algocoding.wordpress.com/2015/05/13/simple-union-find-techniques/
 */
 
 package main
@@ -149,6 +153,24 @@ func (D *DisjointUnion) unionByRank(value1 string, value2 string) int {
 	return D.rank_sets[maxValue]
 }
 
+func (D *DisjointUnion) parentInBySplitting(value string) (string, bool, int) {
+
+	if D.belong(value) == false {
+		return value, false, 0
+	}
+
+	lengthPath := 0
+	parentValue := value
+
+	for D.universe[value] != value {
+		lengthPath++
+		parentValue = D.universe[value]
+		D.universe[value] = D.universe[D.universe[value]]
+		value = parentValue
+	}
+
+	return value, true, lengthPath
+}
 
 /// find parent of value and apply path compression
 func (D *DisjointUnion) parentInByCompress(value string) (string, bool, int) {
@@ -176,8 +198,8 @@ func main(){
 	testingDUS.add("b")
 	fmt.Println(testingDUS.unionByRank("hola", "que"))
 	fmt.Println(testingDUS.unionByRank("_", "?"))
-	fmt.Println(testingDUS.parentIn("que"))
 	fmt.Println(testingDUS.unionByRank("que", "?"))
-	fmt.Println(testingDUS.parentIn("que"))
+	fmt.Println(testingDUS.parentInBySplitting("?"))
 	fmt.Println(testingDUS.universe)
+	fmt.Println(testingDUS.parentIn("que"))
 }
