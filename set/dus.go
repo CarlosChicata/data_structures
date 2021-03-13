@@ -8,7 +8,7 @@ Methods:
 	- add [x] : add element in universe if not exists
 	- belong [x] : element belong this universe
 	- len [x] : count all elements of universe set
-	- display [ ] : display all element in universe set
+	- display [x] : display all element in universe set
 	- union [x] : merge two set: they are two variants:
 		- unionBySize [x] : merge using size
 		- unionByRank [x] : merge using rank
@@ -17,7 +17,7 @@ Methods:
 		- parentInByHalving [x]: apply path halving.
 		- parentInBySplitting [x] : apply path splitting.
 	- sizeSet [x] : get size of set by specified element 
-	- sizeIn [ ] : get number of set in universe.
+	- sizeIn [x] : get number of set in universe.
 
 Internal Methods:
 	- preparing [x]: preparing map fields in Disjoint Union
@@ -204,11 +204,13 @@ func (D *DisjointUnion) parentInByCompress(value string) (string, bool, int) {
 	return value, true, len(path)
 }
 
+/// get size of element in universe
 func (D *DisjointUnion) sizeIn() int {
 	return len(D.universe)	
 }
 
-func (D *DisjointUnion) display () {
+/// display element in disjount union set
+func (D *DisjointUnion) display() {
 	var msg string
 
 	for value, parent := range D.universe {
