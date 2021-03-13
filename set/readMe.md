@@ -1,14 +1,14 @@
 # Set data structure
 Contain my implementation of several type of sets to learn golang.
 
-# available implementations 
+# Available implementations 
 Those are types of sets will implement
 - [X] Unique elements in Set (set)
 - [X] Non-unique elements in set (dst)
 - [X] Disjoint-union set (dus)
 
 # Methods
-All lists contain those methods in common.
+All sets contain those methods in common.
 
 - **add**: add element in set if not exists.
 - **remove**: remove element in set if exists.
@@ -58,7 +58,7 @@ Contain counmmon methods implemented in those sets.
 | parentIn | :x: | :x: | :heavy_check_mark: |
 
 # Table of time complexity - worst case
-Contain all time complexity of implementations
+Contain all time complexity of implementations in common methods.
 
 | Methods | set | dst | dus |
 | ---- | ---- | ---- | ---- |
