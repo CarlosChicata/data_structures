@@ -14,7 +14,7 @@ Methods:
 		- unionByRank [x] : merge using rank
 	- parentIn [X] : get parent of set. this is normal version but contain variants:
 		- parentInByCompress [x] : apply path compression.
-		- parentInByHalving [ ]: apply path halving.
+		- parentInByHalving [x]: apply path halving.
 		- parentInBySplitting [x] : apply path splitting.
 	- sizeSet [x] : get size of set by specified element 
 	- sizeIn [ ] : get number of set in universe.
@@ -202,6 +202,10 @@ func (D *DisjointUnion) parentInByCompress(value string) (string, bool, int) {
 	}
 
 	return value, true, len(path)
+}
+
+func (D *DisjointUnion) sizeIn() int {
+	return len(D.universe)	
 }
 
 func main(){
