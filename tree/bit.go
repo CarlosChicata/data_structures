@@ -23,9 +23,10 @@ type myNode struct {
 	right *myNode
 }
 
-type myLinkedList struct {
+type myBinaryTree struct {
 	length int
 	head *myNode
+	comparing func(string, string) bool
 }
 
 
