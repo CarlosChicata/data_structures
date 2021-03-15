@@ -45,6 +45,29 @@ func (T *myBinaryTree) add (value string) {
 	currentNode = &myNode{value: value, left: nil, right: nil}
 }
 
+func (T *myBinaryTree) display(){
+	currentNode := T.head
+	var queue [] *myNode
+
+	if currentNode != nil {
+		queue = append(queue, currentNode)
+	}
+
+	for len(queue) != 0 {
+		fmt.Println("value is %s: ", currentNode.value, " left: ", currentNode.left, " and right: ", currentNode.right)
+
+		if currentNode.left != nil {
+			queue = append(queue, currentNode.left)
+		}
+		if currentNode.right != nil {
+			queue = append(queue, currentNode.right)
+		}
+
+		currentNode = queue[0]
+		queue = append(queue[:0], queue[1:]...)
+	}
+
+}
 
 
 func main(){
@@ -54,4 +77,5 @@ func main(){
 	testingTree.add("que")
 	testingTree.add("tal")
 	testingTree.add("?")
+	testingTree.display()
 }
