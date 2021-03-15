@@ -5,11 +5,11 @@ Purpose:
 Version: 1.0
 
 Methods:
-	- add [ ] : add element in tree
+	- add [x] : add element in tree
 	- remove [ ] : remove element in tree if exists
 	- find [ ] : find element in this tree
 	- len [ ] : count all elements of tree
-	- display [ ] : display all element in tree
+	- display [x] : display all element in tree
 */
 
 package main
@@ -30,6 +30,7 @@ type myBinaryTree struct {
 	comparing func(string, string) bool
 }
 
+/// add element in tree
 func (T *myBinaryTree) add (value string) {
 	currentNode := T.head
 	
@@ -45,6 +46,7 @@ func (T *myBinaryTree) add (value string) {
 	currentNode = &myNode{value: value, left: nil, right: nil}
 }
 
+/// display tree
 func (T *myBinaryTree) display(){
 	currentNode := T.head
 	var queue [] *myNode
