@@ -1,6 +1,6 @@
 /*
 Purpose:
-	implement my version of duplicated elements in set.
+	implement my version of simple binary tree.
 
 Version: 1.0
 
