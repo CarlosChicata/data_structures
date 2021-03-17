@@ -102,6 +102,25 @@ func (T *myBinaryTree) len() int {
 	return T.length
 }
 
+func (T *myBinaryTree) find(value string) bool {
+	currentNode := T.head
+	rptaFlag := false
+
+	for currentNode != nil {
+		if currentNode.value == value {
+			rptaFlag = true
+			break
+		} else {
+			if T.comparing(value, currentNode.value) {
+				currentNode = currentNode.right
+			}else{
+				currentNode = currentNode.left
+			}
+		}
+	}
+	return rptaFlag
+}
+
 func main(){
 	testingTree := myBinaryTree{length: 0, comparing: func(a string, b string) bool { return a < b}}
 	testingTree.add("hola")
@@ -110,4 +129,5 @@ func main(){
 	fmt.Println("---------------------")
 	testingTree.display()
 	fmt.Println(testingTree.len())
+	fmt.Println(testingTree.find("kha"))
 }
