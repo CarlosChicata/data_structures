@@ -7,7 +7,7 @@ Version: 1.0
 Methods:
 	- add [x] : add element in tree
 	- remove [ ] : remove element in tree if exists
-	- find [ ] : find element in this tree
+	- find [x] : find element in this tree
 	- len [x] : count all elements of tree
 	- display [x] : display all element in tree
 */
@@ -102,6 +102,7 @@ func (T *myBinaryTree) len() int {
 	return T.length
 }
 
+/// find value in tree
 func (T *myBinaryTree) find(value string) bool {
 	currentNode := T.head
 	rptaFlag := false
