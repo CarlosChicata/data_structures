@@ -8,7 +8,7 @@ Methods:
 	- add [x] : add element in tree
 	- remove [ ] : remove element in tree if exists
 	- find [ ] : find element in this tree
-	- len [ ] : count all elements of tree
+	- len [x] : count all elements of tree
 	- display [x] : display all element in tree
 */
 
@@ -97,6 +97,7 @@ func (T *myBinaryTree) display(){
 
 }
 
+/// length of node in tree
 func (T *myBinaryTree) len() int {
 	return T.length
 }
