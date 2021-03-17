@@ -97,6 +97,9 @@ func (T *myBinaryTree) display(){
 
 }
 
+func (T *myBinaryTree) len() int {
+	return T.length
+}
 
 func main(){
 	testingTree := myBinaryTree{length: 0, comparing: func(a string, b string) bool { return a < b}}
@@ -105,4 +108,5 @@ func main(){
 	testingTree.add("tal")
 	fmt.Println("---------------------")
 	testingTree.display()
+	fmt.Println(testingTree.len())
 }
