@@ -122,6 +122,32 @@ func (T *myBinaryTree) find(value string) bool {
 	return rptaFlag
 }
 
+func (T *myBinaryTree) remove(value string) bool {
+	currentNode := T.head
+	rptaFlag := false
+
+	for currentNode != nil && rptaFlag == false {
+		if T.comparing(value, currentNode.value)  {
+			currentNode = currentNode.right
+		}else {
+			currentNode = currentNode.left
+		}
+		if currentNode != nil && currentNode.value == value {
+			rptaFlag = true
+		}
+	}
+
+	if rptaFlag {
+		if currentNode.right != nil {
+
+		}else if currentNode.left != nil {
+			
+		}
+	}
+
+	return rptaFlag
+}
+
 func main(){
 	testingTree := myBinaryTree{length: 0, comparing: func(a string, b string) bool { return a < b}}
 	testingTree.add("hola")
